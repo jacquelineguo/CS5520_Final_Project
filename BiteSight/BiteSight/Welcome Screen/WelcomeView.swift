@@ -27,7 +27,7 @@ class WelcomeView: UIView {
     
     func setupAppIcon() {
         appIcon = UIImageView()
-        appIcon.image = UIImage(systemName: "logo")
+        appIcon.image = UIImage(named: "logo")
         appIcon.tintColor = .black
         appIcon.contentMode = .scaleToFill
         appIcon.clipsToBounds = true
@@ -49,7 +49,7 @@ class WelcomeView: UIView {
         loginButton = UIButton(type: .system)
         loginButton.setTitle("Login", for: .normal)
         loginButton.tintColor = .white
-        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         loginButton.layer.borderColor = UIColor.systemTeal.cgColor
         loginButton.layer.borderWidth = 3
         loginButton.layer.cornerRadius = 25.0
@@ -63,7 +63,7 @@ class WelcomeView: UIView {
         registerButton = UIButton(type: .system)
         registerButton.setTitle("Sign Up", for: .normal)
         registerButton.tintColor = .white
-        registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
+        registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         registerButton.layer.borderColor = UIColor.systemTeal.cgColor
         registerButton.layer.borderWidth = 3
         registerButton.layer.cornerRadius = 25.0
@@ -77,8 +77,8 @@ class WelcomeView: UIView {
         NSLayoutConstraint.activate([
             appIcon.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50),
             appIcon.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            appIcon.widthAnchor.constraint(equalToConstant: 130),
-            appIcon.heightAnchor.constraint(equalToConstant: 130),
+            appIcon.widthAnchor.constraint(equalToConstant: 160),
+            appIcon.heightAnchor.constraint(equalToConstant: 160),
             
             appLabel.topAnchor.constraint(equalTo: appIcon.bottomAnchor, constant: 30),
             appLabel.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),

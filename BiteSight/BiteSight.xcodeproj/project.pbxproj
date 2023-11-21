@@ -50,6 +50,7 @@
 		BD0AE0CD2B0C420A00BD63B8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0CC2B0C420A00BD63B8 /* RegisterViewController.swift */; };
 		BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0CE2B0C422700BD63B8 /* RegisterFirebaseManager.swift */; };
 		BD0AE0D12B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0D02B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift */; };
+		BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0D22B0C521B00BD63B8 /* Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		BD0AE0CC2B0C420A00BD63B8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BD0AE0CE2B0C422700BD63B8 /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
 		BD0AE0D02B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProgressIndicatorManager.swift; sourceTree = "<group>"; };
+		BD0AE0D22B0C521B00BD63B8 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				BD0AE0752B0C18FA00BD63B8 /* LaunchScreen.storyboard */,
 				BD0AE0782B0C18FA00BD63B8 /* Info.plist */,
 				BD0AE07E2B0C1AA300BD63B8 /* GoogleService-Info.plist */,
+				BD0AE0D22B0C521B00BD63B8 /* Validation.swift */,
 			);
 			path = BiteSight;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				BD0AE0CD2B0C420A00BD63B8 /* RegisterViewController.swift in Sources */,
 				BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */,
 				BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */,
+				BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */,
 				BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */,
 				BD0AE0C52B0C1D4C00BD63B8 /* WelcomeView.swift in Sources */,
 				BD0AE06B2B0C18F800BD63B8 /* AppDelegate.swift in Sources */,

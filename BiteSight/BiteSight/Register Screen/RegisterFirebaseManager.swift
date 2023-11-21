@@ -36,6 +36,7 @@ extension RegisterViewController{
         if let zipInt = Int(zip ?? "0"), zipInt >= 1 && zipInt <= 99950 && zip?.count == 5 {
         } else {
             showAlert(with: "Error", message: "Zip code must be between 00001 and 99950 and contain only integers.")
+            self.hideActivityIndicator()
             return
         }
         
@@ -46,6 +47,7 @@ extension RegisterViewController{
                             self.createUserDocument(withEmail: email)
                         }else{
                             print(error)
+                            self.hideActivityIndicator()
                         }
                     })
                 }
