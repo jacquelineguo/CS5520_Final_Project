@@ -83,7 +83,7 @@ class ViewController: UIViewController {
             } else {
                 let alertController = UIAlertController(title: "Success!!", message: "You are now logged in!", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:  {_ in 
-                    self.navigateToHome()
+                    self.navigateToLanding()
                 }))
                 self.present(alertController, animated: true, completion: nil)
                 Validation.defaults.set(email, forKey: "auth")
@@ -93,9 +93,9 @@ class ViewController: UIViewController {
         })
     }
     
-    private func navigateToHome() {
-        let homeViewController = HomeViewController()
-        self.navigationController?.pushViewController(homeViewController, animated: true)
+    private func navigateToLanding() {
+        let landingViewController = LandingViewController()
+        self.navigationController?.pushViewController(landingViewController, animated: true)
     }	
     
     func showAlert(with title: String, message: String) {

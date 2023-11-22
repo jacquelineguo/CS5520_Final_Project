@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  ExploreView.swift
 //  BiteSight
 //
 //  Created by (Vincent) GuoWei Li on 11/22/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeView: UIView {
+class ExploreView: UIView {
 
     var boxView: UIView!
     
@@ -15,7 +15,7 @@ class HomeView: UIView {
         super.init(frame: frame)
         
         boxView = UIView()
-        boxView.backgroundColor = .red
+        boxView.backgroundColor = .green
         boxView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(boxView)
         
@@ -30,4 +30,5 @@ class HomeView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }

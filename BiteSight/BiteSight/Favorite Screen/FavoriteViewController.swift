@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  FavoriteViewController.swift
 //  BiteSight
 //
 //  Created by (Vincent) GuoWei Li on 11/22/23.
@@ -7,18 +7,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class FavoriteViewController: UIViewController {
 
-    let homeView = HomeView()
+    let favoriteView = FavoriteView()
     
     override func loadView() {
-        view = homeView
+        view = favoriteView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Home"
+        title = "Favorite"
     }
-
 }

@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  FavoriteView.swift
 //  BiteSight
 //
 //  Created by (Vincent) GuoWei Li on 11/22/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeView: UIView {
+class FavoriteView: UIView {
 
     var boxView: UIView!
     
@@ -15,7 +15,7 @@ class HomeView: UIView {
         super.init(frame: frame)
         
         boxView = UIView()
-        boxView.backgroundColor = .red
+        boxView.backgroundColor = .blue
         boxView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(boxView)
         

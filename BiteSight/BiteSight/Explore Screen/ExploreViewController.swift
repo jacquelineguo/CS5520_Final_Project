@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ExploreViewController.swift
 //  BiteSight
 //
 //  Created by (Vincent) GuoWei Li on 11/22/23.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ExploreViewController: UIViewController {
 
-    let homeView = HomeView()
+    let exploreView = ExploreView()
     
     override func loadView() {
-        view = homeView
+        view = exploreView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Home"
+        title = "Explore"
     }
 
 }

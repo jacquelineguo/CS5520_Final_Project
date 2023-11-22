@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */; };
+		940BB4152B0E65C600D5D2D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4142B0E65C600D5D2D2 /* HomeView.swift */; };
+		940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4172B0E690900D5D2D2 /* ExploreView.swift */; };
+		940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4192B0E691700D5D2D2 /* ExploreViewController.swift */; };
+		940BB41D2B0E693100D5D2D2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */; };
+		940BB41F2B0E694300D5D2D2 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */; };
 		BD0AE06B2B0C18F800BD63B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE06A2B0C18F800BD63B8 /* AppDelegate.swift */; };
 		BD0AE06D2B0C18F800BD63B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE06C2B0C18F800BD63B8 /* SceneDelegate.swift */; };
 		BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE06E2B0C18F800BD63B8 /* ViewController.swift */; };
@@ -41,8 +47,8 @@
 		BD0AE0B22B0C1AF400BD63B8 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD0AE0B12B0C1AF400BD63B8 /* FirebaseRemoteConfigSwift */; };
 		BD0AE0B42B0C1AF400BD63B8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BD0AE0B32B0C1AF400BD63B8 /* FirebaseStorage */; };
 		BD0AE0B62B0C1AF400BD63B8 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BD0AE0B52B0C1AF400BD63B8 /* FirebaseStorageCombine-Community */; };
-		BD0AE0BF2B0C1CF500BD63B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0BE2B0C1CF500BD63B8 /* HomeViewController.swift */; };
-		BD0AE0C12B0C1D0A00BD63B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0C02B0C1D0A00BD63B8 /* HomeView.swift */; };
+		BD0AE0BF2B0C1CF500BD63B8 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0BE2B0C1CF500BD63B8 /* LandingViewController.swift */; };
+		BD0AE0C12B0C1D0A00BD63B8 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0C02B0C1D0A00BD63B8 /* LandingView.swift */; };
 		BD0AE0C52B0C1D4C00BD63B8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0C42B0C1D4C00BD63B8 /* WelcomeView.swift */; };
 		BD0AE0C72B0C1DF500BD63B8 /* ProgressSpinnerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0C62B0C1DF500BD63B8 /* ProgressSpinnerDelegate.swift */; };
 		BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0C82B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift */; };
@@ -54,6 +60,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		940BB4142B0E65C600D5D2D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		940BB4172B0E690900D5D2D2 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		940BB4192B0E691700D5D2D2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		BD0AE0672B0C18F800BD63B8 /* BiteSight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiteSight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0AE06A2B0C18F800BD63B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD0AE06C2B0C18F800BD63B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +75,8 @@
 		BD0AE0762B0C18FA00BD63B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD0AE0782B0C18FA00BD63B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD0AE07E2B0C1AA300BD63B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BD0AE0BE2B0C1CF500BD63B8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BD0AE0C02B0C1D0A00BD63B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BD0AE0BE2B0C1CF500BD63B8 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		BD0AE0C02B0C1D0A00BD63B8 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		BD0AE0C42B0C1D4C00BD63B8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BD0AE0C62B0C1DF500BD63B8 /* ProgressSpinnerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerDelegate.swift; sourceTree = "<group>"; };
 		BD0AE0C82B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +125,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940BB4162B0E65CC00D5D2D2 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				940BB4142B0E65C600D5D2D2 /* HomeView.swift */,
+				940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		940BB41B2B0E691B00D5D2D2 /* Explore Screen */ = {
+			isa = PBXGroup;
+			children = (
+				940BB4172B0E690900D5D2D2 /* ExploreView.swift */,
+				940BB4192B0E691700D5D2D2 /* ExploreViewController.swift */,
+			);
+			path = "Explore Screen";
+			sourceTree = "<group>";
+		};
+		940BB4202B0E694900D5D2D2 /* Favorite Screen */ = {
+			isa = PBXGroup;
+			children = (
+				940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */,
+				940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */,
+			);
+			path = "Favorite Screen";
+			sourceTree = "<group>";
+		};
 		BD0AE05E2B0C18F800BD63B8 = {
 			isa = PBXGroup;
 			children = (
@@ -136,9 +175,10 @@
 				BD0AE0C22B0C1D1100BD63B8 /* Data Model */,
 				BD0AE0BD2B0C1CC000BD63B8 /* User Profile Screen */,
 				BD0AE0BC2B0C1CAE00BD63B8 /* Restaurant Detail Screen */,
-				BD0AE0BB2B0C1C8F00BD63B8 /* Favorite Screen */,
-				BD0AE0BA2B0C1C8500BD63B8 /* Explore Screen */,
-				BD0AE0B92B0C1C7200BD63B8 /* Home Screen */,
+				940BB4202B0E694900D5D2D2 /* Favorite Screen */,
+				940BB41B2B0E691B00D5D2D2 /* Explore Screen */,
+				940BB4162B0E65CC00D5D2D2 /* Home Screen */,
+				BD0AE0B92B0C1C7200BD63B8 /* Landing Screen */,
 				BD0AE0B82B0C1C6700BD63B8 /* Register Screen */,
 				BD0AE0B72B0C1C3000BD63B8 /* Welcome Screen */,
 				BD0AE06A2B0C18F800BD63B8 /* AppDelegate.swift */,
@@ -173,27 +213,13 @@
 			path = "Register Screen";
 			sourceTree = "<group>";
 		};
-		BD0AE0B92B0C1C7200BD63B8 /* Home Screen */ = {
+		BD0AE0B92B0C1C7200BD63B8 /* Landing Screen */ = {
 			isa = PBXGroup;
 			children = (
-				BD0AE0BE2B0C1CF500BD63B8 /* HomeViewController.swift */,
-				BD0AE0C02B0C1D0A00BD63B8 /* HomeView.swift */,
+				BD0AE0C02B0C1D0A00BD63B8 /* LandingView.swift */,
+				BD0AE0BE2B0C1CF500BD63B8 /* LandingViewController.swift */,
 			);
-			path = "Home Screen";
-			sourceTree = "<group>";
-		};
-		BD0AE0BA2B0C1C8500BD63B8 /* Explore Screen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Explore Screen";
-			sourceTree = "<group>";
-		};
-		BD0AE0BB2B0C1C8F00BD63B8 /* Favorite Screen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Favorite Screen";
+			path = "Landing Screen";
 			sourceTree = "<group>";
 		};
 		BD0AE0BC2B0C1CAE00BD63B8 /* Restaurant Detail Screen */ = {
@@ -334,15 +360,21 @@
 				BD0AE0CD2B0C420A00BD63B8 /* RegisterViewController.swift in Sources */,
 				BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */,
 				BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */,
+				940BB41D2B0E693100D5D2D2 /* FavoriteViewController.swift in Sources */,
+				940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */,
 				BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */,
+				940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */,
+				940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */,
 				BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */,
 				BD0AE0C52B0C1D4C00BD63B8 /* WelcomeView.swift in Sources */,
 				BD0AE06B2B0C18F800BD63B8 /* AppDelegate.swift in Sources */,
 				BD0AE0D12B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift in Sources */,
 				BD0AE06D2B0C18F800BD63B8 /* SceneDelegate.swift in Sources */,
-				BD0AE0C12B0C1D0A00BD63B8 /* HomeView.swift in Sources */,
-				BD0AE0BF2B0C1CF500BD63B8 /* HomeViewController.swift in Sources */,
+				BD0AE0C12B0C1D0A00BD63B8 /* LandingView.swift in Sources */,
+				BD0AE0BF2B0C1CF500BD63B8 /* LandingViewController.swift in Sources */,
 				BD0AE0C72B0C1DF500BD63B8 /* ProgressSpinnerDelegate.swift in Sources */,
+				940BB41F2B0E694300D5D2D2 /* FavoriteView.swift in Sources */,
+				940BB4152B0E65C600D5D2D2 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +534,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,6 +563,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
