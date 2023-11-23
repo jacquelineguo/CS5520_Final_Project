@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ExploreViewController: UIViewController {
 
@@ -18,7 +19,12 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Explore"
+        LocationFetcher.shared.getUserLocation { location in
+            DispatchQueue.main.async {
+                let coordinate = location.coordinate
+                print(coordinate)
+                self.exploreView.userLocationLabel.text = "\(coordinate.latitude), \(coordinate.longitude)"
+            }
+        }
     }
-
 }
