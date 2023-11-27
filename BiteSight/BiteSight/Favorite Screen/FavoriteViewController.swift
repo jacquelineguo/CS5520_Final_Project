@@ -37,7 +37,7 @@ class FavoriteViewController: UIViewController {
         
         favoriteView.tableViewFavorites.delegate = self
         favoriteView.tableViewFavorites.dataSource = self
-        favoriteView.tableViewFavorites.separatorStyle = .none
+//        favoriteView.tableViewFavorites.separatorStyle = .none
     }
     
     func getAllFavorites() {

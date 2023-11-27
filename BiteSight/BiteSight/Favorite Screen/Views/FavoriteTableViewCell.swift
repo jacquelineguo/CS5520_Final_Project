@@ -61,9 +61,10 @@ class FavoriteTableViewCell: UITableViewCell {
     func setupLabelDescription() {
         labelDescription = UILabel()
         labelDescription.font = UIFont.boldSystemFont(ofSize: 16)
-        labelDescription.numberOfLines = 0
-        labelDescription.lineBreakMode = .byWordWrapping
-        labelDescription.sizeToFit()
+        labelDescription.numberOfLines = 2
+//        labelDescription.lineBreakMode = .byWordWrapping
+//        labelDescription.sizeToFit()
+        labelDescription.lineBreakMode = .byTruncatingTail
         
         labelDescription.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(labelDescription)
@@ -75,17 +76,19 @@ class FavoriteTableViewCell: UITableViewCell {
             wrapperCellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3),
             wrapperCellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3),
             wrapperCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3),
-            wrapperCellView.heightAnchor.constraint(equalToConstant: 102),
+            wrapperCellView.heightAnchor.constraint(equalToConstant: 120),
             
             imagePhoto.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor),
-            imagePhoto.heightAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -30),
-            imagePhoto.widthAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -30),
+            imagePhoto.heightAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -20),
+            imagePhoto.widthAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -20),
+            imagePhoto.centerYAnchor.constraint(equalTo: wrapperCellView.centerYAnchor),
             
-            labelName.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 12),
-            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 12),
+            labelName.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
+            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 20),
             
-            labelDescription.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 12),
-            labelDescription.topAnchor.constraint(equalTo: labelName.topAnchor, constant: 12),
+            labelDescription.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
+            labelDescription.topAnchor.constraint(equalTo: labelName.topAnchor, constant: 40),
+            labelDescription.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor, constant: -150),
             
 //            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 12),
 //            labelName.leadingAnchor.constraint(equalTo: imageProfile.trailingAnchor, constant: 12),
