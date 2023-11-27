@@ -50,8 +50,8 @@ class FavoriteTableViewCell: UITableViewCell {
     func setupLabelName() {
         labelName = UILabel()
         labelName.font = UIFont.boldSystemFont(ofSize: 16)
-        labelName.numberOfLines = 0
-        labelName.lineBreakMode = .byWordWrapping
+//        labelName.numberOfLines = 0
+//        labelName.lineBreakMode = .byWordWrapping
         labelName.sizeToFit()
         
         labelName.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,7 @@ class FavoriteTableViewCell: UITableViewCell {
     
     func setupLabelDescription() {
         labelDescription = UILabel()
-        labelDescription.font = UIFont.boldSystemFont(ofSize: 16)
+        labelDescription.font = UIFont.systemFont(ofSize: 16)
         labelDescription.numberOfLines = 2
 //        labelDescription.lineBreakMode = .byWordWrapping
 //        labelDescription.sizeToFit()
@@ -84,10 +84,10 @@ class FavoriteTableViewCell: UITableViewCell {
             imagePhoto.centerYAnchor.constraint(equalTo: wrapperCellView.centerYAnchor),
             
             labelName.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
-            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 20),
+            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 22),
             
             labelDescription.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
-            labelDescription.topAnchor.constraint(equalTo: labelName.topAnchor, constant: 40),
+            labelDescription.bottomAnchor.constraint(equalTo: wrapperCellView.bottomAnchor, constant: -22),
             labelDescription.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor, constant: -150),
             
 //            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 12),
