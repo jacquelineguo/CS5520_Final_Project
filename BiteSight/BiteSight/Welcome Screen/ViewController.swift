@@ -19,8 +19,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Welcome"
+        
+        print("Check for current user: \(Validation.defaults.object(forKey: "auth"))")
+        if let temp = Validation.defaults.object(forKey: "auth") as! String? {
+            navigateToLanding()
+        }
         
         welcomeView.loginButton.addTarget(self, action: #selector(onSignInButtonTapped), for: .touchUpInside)
         welcomeView.registerButton.addTarget(self, action: #selector(onRegisterButtonTapped), for: .touchUpInside)
@@ -81,14 +85,17 @@ class ViewController: UIViewController {
                     self.showAlert(with: "Login Error", message: "An error occurred during login: \(error!.localizedDescription)")
                 }
             } else {
-                let alertController = UIAlertController(title: "Success!!", message: "You are now logged in!", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:  {_ in 
-                    self.navigateToLanding()
-                }))
-                self.present(alertController, animated: true, completion: nil)
+//                let alertController = UIAlertController(title: "Success!!", message: "You are now logged in!", preferredStyle: .alert)
+//                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:  {_ in
+//                    self.navigateToLanding()
+//                }))
+//                self.present(alertController, animated: true, completion: nil)
                 Validation.defaults.set(email, forKey: "auth")
                 
                 
+                print("Current user saved: \(Validation.defaults.object(forKey: "auth"))")
+                print(Validation.defaults.object(forKey: "auth"))
+                self.navigateToLanding()
             }
         })
     }

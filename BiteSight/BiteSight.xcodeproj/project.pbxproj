@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50A926E82B13F4EA00A017DB /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926E72B13F4EA00A017DB /* Overview.swift */; };
+		50A926EB2B13F56B00A017DB /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926EA2B13F56B00A017DB /* FavoriteTableViewCell.swift */; };
+		50A926ED2B13FC3A00A017DB /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926EC2B13FC3A00A017DB /* Configs.swift */; };
+		50A926EF2B1400ED00A017DB /* FavoriteTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926EE2B1400ED00A017DB /* FavoriteTableViewManager.swift */; };
 		940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */; };
 		940BB4152B0E65C600D5D2D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4142B0E65C600D5D2D2 /* HomeView.swift */; };
 		940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4172B0E690900D5D2D2 /* ExploreView.swift */; };
@@ -61,6 +65,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50A926E72B13F4EA00A017DB /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		50A926EA2B13F56B00A017DB /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		50A926EC2B13FC3A00A017DB /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		50A926EE2B1400ED00A017DB /* FavoriteTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewManager.swift; sourceTree = "<group>"; };
 		940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		940BB4142B0E65C600D5D2D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		940BB4172B0E690900D5D2D2 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -127,6 +135,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50A926E62B13F40800A017DB /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD0AE0D22B0C521B00BD63B8 /* Validation.swift */,
+				50A926E72B13F4EA00A017DB /* Overview.swift */,
+				50A926EC2B13FC3A00A017DB /* Configs.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		50A926E92B13F54700A017DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */,
+				50A926EA2B13F56B00A017DB /* FavoriteTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		940BB4162B0E65CC00D5D2D2 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +175,9 @@
 		940BB4202B0E694900D5D2D2 /* Favorite Screen */ = {
 			isa = PBXGroup;
 			children = (
-				940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */,
 				940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */,
+				50A926EE2B1400ED00A017DB /* FavoriteTableViewManager.swift */,
+				50A926E92B13F54700A017DB /* Views */,
 			);
 			path = "Favorite Screen";
 			sourceTree = "<group>";
@@ -181,8 +209,8 @@
 		BD0AE0692B0C18F800BD63B8 /* BiteSight */ = {
 			isa = PBXGroup;
 			children = (
+				50A926E62B13F40800A017DB /* Data Models */,
 				BD0AE0C32B0C1D2200BD63B8 /* Progress Indicator */,
-				BD0AE0C22B0C1D1100BD63B8 /* Data Model */,
 				BD0AE0BD2B0C1CC000BD63B8 /* User Profile Screen */,
 				BD0AE0BC2B0C1CAE00BD63B8 /* Restaurant Detail Screen */,
 				940BB4232B0ECDC200D5D2D2 /* Utility */,
@@ -199,7 +227,6 @@
 				BD0AE0752B0C18FA00BD63B8 /* LaunchScreen.storyboard */,
 				BD0AE0782B0C18FA00BD63B8 /* Info.plist */,
 				BD0AE07E2B0C1AA300BD63B8 /* GoogleService-Info.plist */,
-				BD0AE0D22B0C521B00BD63B8 /* Validation.swift */,
 			);
 			path = BiteSight;
 			sourceTree = "<group>";
@@ -245,13 +272,6 @@
 			children = (
 			);
 			path = "User Profile Screen";
-			sourceTree = "<group>";
-		};
-		BD0AE0C22B0C1D1100BD63B8 /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		BD0AE0C32B0C1D2200BD63B8 /* Progress Indicator */ = {
@@ -373,13 +393,16 @@
 				BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */,
 				BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */,
 				940BB41D2B0E693100D5D2D2 /* FavoriteViewController.swift in Sources */,
+				50A926E82B13F4EA00A017DB /* Overview.swift in Sources */,
 				940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */,
 				BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */,
 				940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */,
 				940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */,
 				BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */,
 				BD0AE0C52B0C1D4C00BD63B8 /* WelcomeView.swift in Sources */,
+				50A926ED2B13FC3A00A017DB /* Configs.swift in Sources */,
 				BD0AE06B2B0C18F800BD63B8 /* AppDelegate.swift in Sources */,
+				50A926EF2B1400ED00A017DB /* FavoriteTableViewManager.swift in Sources */,
 				BD0AE0D12B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift in Sources */,
 				BD0AE06D2B0C18F800BD63B8 /* SceneDelegate.swift in Sources */,
 				BD0AE0C12B0C1D0A00BD63B8 /* LandingView.swift in Sources */,
@@ -387,6 +410,7 @@
 				BD0AE0C72B0C1DF500BD63B8 /* ProgressSpinnerDelegate.swift in Sources */,
 				940BB41F2B0E694300D5D2D2 /* FavoriteView.swift in Sources */,
 				940BB4152B0E65C600D5D2D2 /* HomeView.swift in Sources */,
+				50A926EB2B13F56B00A017DB /* FavoriteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

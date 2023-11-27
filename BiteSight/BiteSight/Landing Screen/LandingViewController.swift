@@ -8,9 +8,30 @@
 import UIKit
 
 class LandingViewController: UITabBarController, UITabBarControllerDelegate {
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Logout", // You can set your desired title
+            style: .plain,
+            target: self,
+            action: #selector(leftBarButtonItemTapped)
+        )
+        
+//        print("Key in landing:")
+//        print(Validation.defaults.object(forKey: "auth"))
+    }
+    
+    @objc func leftBarButtonItemTapped() {
+//        Validation.defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+//        Validation.defaults.synchronize()
+        Validation.defaults.removeObject(forKey: "auth")
+//        Validation.defaults.synchronize()
+//        print("Logout button tapped")
+//        print(Validation.defaults.object(forKey: "auth"))
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
