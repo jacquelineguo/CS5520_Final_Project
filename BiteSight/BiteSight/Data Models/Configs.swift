@@ -9,4 +9,5 @@ import Foundation
 
 class Configs {
     static let tableViewFavoriteID = "tableViewFavoriteID"
+    static let searchRestaurantBaseURL = "https://api.yelp.com/v3/businesses/search"
 }

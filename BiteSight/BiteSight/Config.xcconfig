@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  BiteSight
+//
+//  Created by (Vincent) GuoWei Li on 11/28/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = agVv16-KQLHNIryDG_dikOb4kwZcW1Nt7uHoFqDc_qM5MFxkJTsCHH7V-ApuOhERetcVdqyqQCXvLfYJ38KnAH-y_F5JcxJ8yHp817Oe7fE8G59S682hH9IZD-RfZXYx

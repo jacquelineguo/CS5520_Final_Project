@@ -9,7 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     let detailsView = DetailsView()
-    var receivedRestaurant: Restaurant!
+    var receivedRestaurant: Business!
     
     override func loadView() {
         view = detailsView
@@ -18,12 +18,12 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        detailsView.labelName.text = receivedRestaurant.name
-        detailsView.labelAddress.text = receivedRestaurant.address
-        detailsView.labelZip.text = receivedRestaurant.zip
-        detailsView.labelLikes.text = "❤️ \(receivedRestaurant.likes) likes"
-        detailsView.imagePhoto.image = receivedRestaurant.photo
-        detailsView.labelDetails.text = receivedRestaurant.description
+//        detailsView.labelName.text = receivedRestaurant.name
+//        detailsView.labelAddress.text = receivedRestaurant.address
+//        detailsView.labelZip.text = receivedRestaurant.zip
+//        detailsView.labelLikes.text = "❤️ \(receivedRestaurant.likes) likes"
+//        detailsView.imagePhoto.image = receivedRestaurant.photo
+//        detailsView.labelDetails.text = receivedRestaurant.description
     }
     
 

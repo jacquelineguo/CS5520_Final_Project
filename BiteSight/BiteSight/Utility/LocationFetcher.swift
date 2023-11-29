@@ -6,7 +6,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     static let shared = LocationFetcher()
     let locationManager = CLLocationManager()
     var completion: ((CLLocation) -> Void)?
-    
+
     func getUserLocation(completion: @escaping ((CLLocation) -> Void)) {
         self.completion = completion
         locationManager.requestWhenInUseAuthorization()

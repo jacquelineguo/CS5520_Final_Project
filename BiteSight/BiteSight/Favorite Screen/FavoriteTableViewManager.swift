@@ -17,9 +17,9 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewFavoriteID, for: indexPath) as! FavoriteTableViewCell
         
-        cell.imagePhoto.image = favorites[indexPath.row].photo
-        cell.labelName.text = favorites[indexPath.row].name
-        cell.labelDescription.text = favorites[indexPath.row].description
+//        cell.imagePhoto.image = favorites[indexPath.row].photo
+//        cell.labelName.text = favorites[indexPath.row].name
+//        cell.labelDescription.text = favorites[indexPath.row].description
         
         return cell
     }
