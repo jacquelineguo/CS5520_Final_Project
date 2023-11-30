@@ -15,7 +15,7 @@ extension RegisterViewController{
     func registerNewAccount(){
         showActivityIndicator()
         let name = registerView.nameTextField.text
-        let email = registerView.emailTextField.text
+        let email = registerView.emailTextField.text?.lowercased()
         let password = registerView.passwordTextField.text
         let city = registerView.cityTextField.text
         let state = registerView.stateTextField.text
@@ -44,7 +44,7 @@ extension RegisterViewController{
                     Auth.auth().createUser(withEmail: email, password: password, completion: {result, error in
                         if error == nil{
                             self.setNameOfTheUserInFirebaseAuth(name: name)
-                            self.createUserDocument(withEmail: email)
+                            self.createUserDocument(withEmail: email.lowercased())
                         }else{
                             print(error)
                             self.hideActivityIndicator()

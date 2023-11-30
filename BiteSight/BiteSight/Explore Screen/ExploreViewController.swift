@@ -9,6 +9,8 @@ import UIKit
 import CoreLocation
 import Alamofire
 import Koloda
+import FirebaseAuth
+import FirebaseFirestore
 
 class ExploreViewController: UIViewController {
     
@@ -24,7 +26,7 @@ class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        title = "Restaurants Near By"
+        //        title = "Restaurants Near By"
         exploreView.kolodaView.delegate = self
         exploreView.kolodaView.dataSource = self
         view.backgroundColor = .white
@@ -61,9 +63,9 @@ class ExploreViewController: UIViewController {
             return nil // Return nil in case of an error
         }
     }
-
+    
     func setupBusinessCards() async {
-//        var downloadedImages = [UIImage?]()
+        //        var downloadedImages = [UIImage?]()
         var tempBusinessCards = [BusinessCardView]()
         print("entering setupBusinessCards:")
         print("businessCards initial count: \(businessCards.count)")
@@ -74,8 +76,8 @@ class ExploreViewController: UIViewController {
                 let businessImage = image ?? UIImage(named: "default_restaurant") // Replace "defaultImage" with your default image name
                 let businessName = business.name ?? ""
                 let businessCategory = business.categories?.first?.title ?? ""
-//                print("business name is: \(name)")
-//                print("business category title is: \(categoryTitle)")
+                //                print("business name is: \(name)")
+                //                print("business category title is: \(categoryTitle)")
                 let card = BusinessCardView()
                 card.businessImage.image = businessImage
                 print("set image")
@@ -83,25 +85,25 @@ class ExploreViewController: UIViewController {
                 print("set name")
                 card.businessCategory.setTitle(businessCategory.uppercased(), for: .normal)
                 print("set title")
-//                downloadedImages.append(image)
+                //                downloadedImages.append(image)
                 tempBusinessCards.append(card)
                 print("added card to temp")
                 print("temp count: \(tempBusinessCards.count)")
-
+                
             } else {
-//                downloadedImages.append(UIImage()) // Placeholder image
+                //                downloadedImages.append(UIImage()) // Placeholder image
                 tempBusinessCards.append(BusinessCardView())
             }
         }
         
-//        print("final businessCards count: \(tempBusinessCards.count)")
-
+        //        print("final businessCards count: \(tempBusinessCards.count)")
+        
         // Update businessImages on the main thread after all downloads are complete
         DispatchQueue.main.async {
             print("final businessCards count: \(tempBusinessCards.count)")
-
-//            self.businessImages = downloadedImages.compactMap { $0 } // Filter out nil images if necessary
-//            self.reloadImages()
+            
+            //            self.businessImages = downloadedImages.compactMap { $0 } // Filter out nil images if necessary
+            //            self.reloadImages()
             self.businessCards = tempBusinessCards
             self.reloadImages()
         }
@@ -110,13 +112,62 @@ class ExploreViewController: UIViewController {
     func reloadImages() {
         exploreView.kolodaView.reloadData()
     }
-
+    
+    func saveBusinessToFirebase(business: Business, userEmail: String) {
+        // Reference to Firestore
+        print("saving business to firebase ...")
+        let db = Firestore.firestore()
+        
+        // Convert your business object to a dictionary
+        // Convert custom objects to dictionaries
+        let category = business.categories?.first?.title ?? ""
+        let latitude = business.coordinates?.latitude ?? 0
+        let longitude = business.coordinates?.longitude ?? 0
+        let address = business.location?.address1 ?? ""
+        let city = business.location?.city ?? ""
+        let zipCode = business.location?.zipCode ?? ""
+        let state = business.location?.state ?? ""
+        let country = business.location?.country ?? ""
+        let displayAddress = business.location?.displayAddress
+        
+        
+        // Convert your business object to a dictionary
+        let businessData: [String: Any?] = [
+            "id": business.id,
+            "name": business.name,
+            "imageUrl": business.imageUrl,
+            "reviewCount": business.reviewCount,
+            "category": category,
+            "rating": business.rating,
+            "latitude": latitude,
+            "longtitude": longitude,
+            "price": business.price,
+            "address": address,
+            "city": city,
+            "zipCode": zipCode,
+            "state": state,
+            "country": country,
+            "displayAddress": displayAddress,
+            "displayPhone": business.displayPhone,
+            "distance": business.distance
+        ]
+        
+        print("business data: \(businessData)")
+        // Add the business data to the user's business collection
+        db.collection("users").document(userEmail).collection("businesses").addDocument(data: businessData) { error in
+            if let error = error {
+                print("Error adding business document: \(error)")
+            } else {
+                print("Business document added successfully")
+            }
+        }
+    }
 }
 
 extension ExploreViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-//        return UIImageView(image: businessImages[index])
+        //        return UIImageView(image: businessImages[index])
         return businessCards[index]
     }
     
@@ -125,12 +176,26 @@ extension ExploreViewController: KolodaViewDelegate, KolodaViewDataSource {
     }
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-//        return businessImages.count
+        //        return businessImages.count
         return businessCards.count
     }
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         self.reloadImages()
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction == .right {
+            let swipedBusiness = businessList[index]
+            
+            guard let userEmail = Auth.auth().currentUser?.email else {
+                print("No user signed in")
+                return
+            }
+            
+            print("user email: \(userEmail)")
+            saveBusinessToFirebase(business: swipedBusiness, userEmail: userEmail)
+        }
     }
 }
 
