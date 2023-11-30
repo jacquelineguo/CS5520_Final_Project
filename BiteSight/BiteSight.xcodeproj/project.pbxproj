@@ -22,6 +22,7 @@
 		940BB41F2B0E694300D5D2D2 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */; };
 		940BB4222B0ECDB500D5D2D2 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4212B0ECDB500D5D2D2 /* LocationFetcher.swift */; };
 		94DF215C2B16DA5B00BD67DE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DF215B2B16DA5B00BD67DE /* DataService.swift */; };
+		94DF215E2B17DD1A00BD67DE /* BusinessCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DF215D2B17DD1A00BD67DE /* BusinessCardView.swift */; };
 		BD0AE06B2B0C18F800BD63B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE06A2B0C18F800BD63B8 /* AppDelegate.swift */; };
 		BD0AE06D2B0C18F800BD63B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE06C2B0C18F800BD63B8 /* SceneDelegate.swift */; };
 		BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE06E2B0C18F800BD63B8 /* ViewController.swift */; };
@@ -85,6 +86,7 @@
 		940BB4212B0ECDB500D5D2D2 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		94DF215A2B16C0DC00BD67DE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		94DF215B2B16DA5B00BD67DE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		94DF215D2B17DD1A00BD67DE /* BusinessCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardView.swift; sourceTree = "<group>"; };
 		BD0AE0672B0C18F800BD63B8 /* BiteSight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiteSight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0AE06A2B0C18F800BD63B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD0AE06C2B0C18F800BD63B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				940BB4172B0E690900D5D2D2 /* ExploreView.swift */,
 				940BB4192B0E691700D5D2D2 /* ExploreViewController.swift */,
+				94DF215D2B17DD1A00BD67DE /* BusinessCardView.swift */,
 			);
 			path = "Explore Screen";
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				940BB4222B0ECDB500D5D2D2 /* LocationFetcher.swift in Sources */,
 				BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */,
 				BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */,
+				94DF215E2B17DD1A00BD67DE /* BusinessCardView.swift in Sources */,
 				940BB41D2B0E693100D5D2D2 /* FavoriteViewController.swift in Sources */,
 				940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */,
 				BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */,

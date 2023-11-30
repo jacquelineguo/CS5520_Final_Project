@@ -16,6 +16,7 @@ class ExploreViewController: UIViewController {
     let dataService = DataService()
     var businessList = [Business]()
     var businessImages = [UIImage]()
+    var businessCards = [BusinessCardView]()
     
     override func loadView() {
         view = exploreView
@@ -23,6 +24,7 @@ class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        title = "Restaurants Near By"
         exploreView.kolodaView.delegate = self
         exploreView.kolodaView.dataSource = self
         view.backgroundColor = .white
@@ -35,7 +37,7 @@ class ExploreViewController: UIViewController {
                         self.businessList = businesses
                         print("printing business: \(self.businessList)")
                         Task {
-                            await self.downloadAndStoreImages()
+                            await self.setupBusinessCards()
                         }
                         // Update UI with businesses
                     case .failure(let error):
@@ -60,21 +62,47 @@ class ExploreViewController: UIViewController {
         }
     }
 
-    func downloadAndStoreImages() async {
-        var downloadedImages = [UIImage?]()
-
+    func setupBusinessCards() async {
+//        var downloadedImages = [UIImage?]()
+        var tempBusinessCards = [BusinessCardView]()
+        print("entering setupBusinessCards:")
+        print("businessCards initial count: \(businessCards.count)")
         for business in businessList {
+            print("iterating business list")
             if let urlString = business.imageUrl {
                 let image = await self.downloadImage(urlString: urlString)
-                downloadedImages.append(image)
+                let businessImage = image ?? UIImage(named: "default_restaurant") // Replace "defaultImage" with your default image name
+                let businessName = business.name ?? ""
+                let businessCategory = business.categories?.first?.title ?? ""
+//                print("business name is: \(name)")
+//                print("business category title is: \(categoryTitle)")
+                let card = BusinessCardView()
+                card.businessImage.image = businessImage
+                print("set image")
+                card.businessName.text = businessName.uppercased()
+                print("set name")
+                card.businessCategory.setTitle(businessCategory.uppercased(), for: .normal)
+                print("set title")
+//                downloadedImages.append(image)
+                tempBusinessCards.append(card)
+                print("added card to temp")
+                print("temp count: \(tempBusinessCards.count)")
+
             } else {
-                downloadedImages.append(UIImage()) // Placeholder image
+//                downloadedImages.append(UIImage()) // Placeholder image
+                tempBusinessCards.append(BusinessCardView())
             }
         }
+        
+//        print("final businessCards count: \(tempBusinessCards.count)")
 
         // Update businessImages on the main thread after all downloads are complete
         DispatchQueue.main.async {
-            self.businessImages = downloadedImages.compactMap { $0 } // Filter out nil images if necessary
+            print("final businessCards count: \(tempBusinessCards.count)")
+
+//            self.businessImages = downloadedImages.compactMap { $0 } // Filter out nil images if necessary
+//            self.reloadImages()
+            self.businessCards = tempBusinessCards
             self.reloadImages()
         }
     }
@@ -88,7 +116,8 @@ class ExploreViewController: UIViewController {
 extension ExploreViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: businessImages[index])
+//        return UIImageView(image: businessImages[index])
+        return businessCards[index]
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -96,7 +125,8 @@ extension ExploreViewController: KolodaViewDelegate, KolodaViewDataSource {
     }
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return businessImages.count
+//        return businessImages.count
+        return businessCards.count
     }
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {

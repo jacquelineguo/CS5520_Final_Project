@@ -49,7 +49,7 @@ class LandingViewController: UITabBarController, UITabBarControllerDelegate {
         //MARK: setting up green tab bar...
         let tabExplore = UINavigationController(rootViewController: ExploreViewController())
         let tabExploreBarItem = UITabBarItem(
-            title: "Explore",
+            title: "Restaurants Near By",
             image: UIImage(systemName: "safari"),
             selectedImage: UIImage(systemName: "safari.fill")
         )

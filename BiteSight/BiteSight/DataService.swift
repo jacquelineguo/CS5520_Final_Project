@@ -26,7 +26,7 @@ struct DataService {
             "longitude": longitude,
             "sort_by": "distance",
             "is_closed": false,
-            "limit": 30
+            "limit": 20
         ]
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(apiKey!)",
