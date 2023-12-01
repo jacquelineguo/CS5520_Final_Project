@@ -20,6 +20,7 @@ class ExploreViewController: UIViewController {
     var businessImages = [UIImage]()
     var businessCards = [BusinessCardView]()
     var isButtonInitiatedSwipe = false
+    let db = Firestore.firestore()
     
     override func loadView() {
         view = exploreView
@@ -75,7 +76,21 @@ class ExploreViewController: UIViewController {
                 print("No user signed in")
                 return
             }
-            saveBusinessToFirebase(business: swipedBusiness, userEmail: userEmail)
+            guard let businessId = swipedBusiness.id else {
+                    print("Business ID is nil")
+                    return
+            }
+            let businessRef = db.collection("users").document(userEmail).collection("businesses").whereField("id", isEqualTo: businessId)
+            businessRef.getDocuments { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else if querySnapshot!.documents.isEmpty {
+                        // Business ID not found, save the business
+                        self.saveBusinessToFirebase(business: swipedBusiness, userEmail: userEmail)
+                    } else {
+                        print("Business already exists in the database")
+                    }
+                }
         }
         // Add logic for .left direction if needed
     }
@@ -145,8 +160,6 @@ class ExploreViewController: UIViewController {
     func saveBusinessToFirebase(business: Business, userEmail: String) {
         // Reference to Firestore
         print("saving business to firebase ...")
-        let db = Firestore.firestore()
-        
         // Convert your business object to a dictionary
         // Convert custom objects to dictionaries
         let category = business.categories?.first?.title ?? ""
