@@ -7,6 +7,30 @@
 
 import Foundation
 
+struct Restaurant: Codable {
+    var docId: String?
+    
+    var id: String?
+    var name: String?
+    var category: String?
+    var imageUrl: String?
+    var price: String?
+    var rating: Int?
+    var reviewCount: Int?
+    
+    var address: String?
+    var city: String?
+    var state: String?
+    var country: String?
+    var zipCode: String?
+    var displayAddress: [String]?
+    var displayPhone: String?
+    
+    var distance: Double?
+    var latitude: Double?
+    var longtitude: Double?
+}
+
 struct BusinessSearch: Codable {
     var businesses: [Business]?
     var total: Int?

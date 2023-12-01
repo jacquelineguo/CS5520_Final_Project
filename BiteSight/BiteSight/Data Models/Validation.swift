@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class Validation {
     static let defaults = UserDefaults.standard
@@ -38,5 +39,20 @@ class Validation {
         let alert = UIAlertController(title: "Error!", message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         view.present(alert, animated: true)
+    }
+    
+    static func urlToImage(_ imageUrl: String?, completion: @escaping (UIImage?) -> Void) {
+        if let imageUrl = imageUrl {
+            AF.request(imageUrl).responseData { response in
+                switch response.result {
+                case .success(let data):
+                    if let image = UIImage(data: data) {
+                        completion(image)
+                    }
+                case .failure(let error):
+                    print("Error downloading image: \(error)")
+                }
+            }
+        }
     }
 }

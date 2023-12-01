@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import Alamofire
 
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,9 +18,14 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewFavoriteID, for: indexPath) as! FavoriteTableViewCell
         
-//        cell.imagePhoto.image = favorites[indexPath.row].photo
-//        cell.labelName.text = favorites[indexPath.row].name
-//        cell.labelDescription.text = favorites[indexPath.row].description
+        Validation.urlToImage(favorites[indexPath.row].imageUrl) { image in
+            DispatchQueue.main.async {
+                cell.imagePhoto.image = image
+            }
+        }
+        cell.labelName.text = favorites[indexPath.row].name
+        cell.labelPrice.text = favorites[indexPath.row].price
+        cell.labelCategory.text = favorites[indexPath.row].category
         
         return cell
     }

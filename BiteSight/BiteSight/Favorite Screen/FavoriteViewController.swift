@@ -2,17 +2,16 @@
 //  FavoriteViewController.swift
 //  BiteSight
 //
-//  Created by (Vincent) GuoWei Li on 11/22/23.
+//  Created by Tiffany Zhang on 11/30/23.
 //
 
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-//import FirebaseFirestoreSwift
 
 class FavoriteViewController: UIViewController {
     let favoriteView = FavoriteView()
-    var favorites = [Business]()
+    var favorites = [Restaurant]()
     let database = Firestore.firestore()
     var handleAuth: AuthStateDidChangeListenerHandle?
     
@@ -43,9 +42,103 @@ class FavoriteViewController: UIViewController {
     func getAllFavorites() {
         favorites.removeAll()
         
-//        favorites.append(Restaurant(name: "McDonald's", address: "1042 N Ave", zip: "CA 94323", likes: 32891, photo: UIImage(systemName: "person.fill")!, description: "Globally renowned fast-food chain that originated in the United States."))
-//        favorites.append(Restaurant(name: "KFC", address: "232 Parker Ave", zip: "CA 94117", likes: 12345, photo: UIImage(systemName: "square.and.arrow.up")!, description: "KFC is a popular international fast-food chain that specializes in fried chicken. The brand is famous for its secret blend of 11 herbs and spices, used in its original recipe chicken. KFC's menu typically includes a variety of fried chicken pieces, as well as sides such as mashed potatoes, coleslaw, and biscuits. The franchise has a global presence and is known for its distinctive red and white color scheme."))
-//        favorites.append(Restaurant(name: "Somi Somi", address: "1531 Berryessa Rd", zip: "95133", likes: 412, photo: UIImage(systemName: "pencil")!, description: "Somi Somi is a dessert shop that gained popularity for its unique Korean-inspired desserts, particularly its signature item, the Ah-boong."))
+        if let currUser = Validation.defaults.object(forKey: "auth") as! String? {
+            let businessCollection = database.collection("users").document(currUser).collection("businesses")
+            businessCollection.addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents: \(error?.localizedDescription ?? "Unknown error")")
+                    return
+                }
+
+                for document in documents {
+                    let data = document.data()
+                    let docId = document.documentID
+                    var id: String? = nil
+                    var name: String? = nil
+                    var category: String? = nil
+                    var imageUrl: String? = nil
+                    var price: String? = nil
+                    var rating: Int? = nil
+                    var reviewCount: Int? = nil
+                    var address: String? = nil
+                    var city: String? = nil
+                    var state: String? = nil
+                    var country: String? = nil
+                    var zipCode: String? = nil
+                    var displayAddress: [String]? = nil
+                    var displayPhone: String? = nil
+                    var distance: Double? = nil
+                    var latitude: Double? = nil
+                    var longtitude: Double? = nil
+                    
+                    if let temp = data["id"] as? String {
+                        id = temp
+                    }
+                    if let temp = data["name"] as? String {
+                        name = temp
+                    }
+                    if let temp = data["category"] as? String {
+                        category = temp
+                    }
+                    if let temp = data["imageUrl"] as? String {
+                        imageUrl = temp
+                    }
+                    if let temp = data["price"] as? String {
+                        price = temp
+                    }
+                    if let temp = data["rating"] as? Int {
+                        rating = temp
+                    }
+                    if let temp = data["reviewCount"] as? Int {
+                        reviewCount = temp
+                    }
+                    if let temp = data["address"] as? String {
+                        address = temp
+                    }
+                    if let temp = data["city"] as? String {
+                        city = temp
+                    }
+                    if let temp = data["state"] as? String {
+                        state = temp
+                    }
+                    if let temp = data["country"] as? String {
+                        country = temp
+                    }
+                    if let temp = data["zipCode"] as? String {
+                        zipCode = temp
+                    }
+                    if let temp = data["displayAddress"] as? [String] {
+                        displayAddress = temp
+                    }
+                    if let temp = data["displayPhone"] as? String {
+                        displayPhone = temp
+                    }
+                    if let temp = data["distance"] as? Double {
+                        distance = temp
+                    }
+                    if let temp = data["latitude"] as? Double {
+                        latitude = temp
+                    }
+                    if let temp = data["longtitude"] as? Double {
+                        longtitude = temp
+                    }
+                    
+                    let restaurant = Restaurant(docId: docId, id: id, name: name, category: category, imageUrl: imageUrl, price: price, rating: rating, reviewCount: reviewCount, address: address, city: city, state: state, country: country, zipCode: zipCode, displayAddress: displayAddress, displayPhone: displayPhone, distance: distance, latitude: latitude, longtitude: longtitude)
+                    
+                    self.favorites.append(restaurant)
+                }
+
+                DispatchQueue.main.async {
+                    print()
+                    print("self.favorites:")
+                    print()
+                    print(self.favorites)
+                    self.favoriteView.tableViewFavorites.reloadData()
+                }
+            }
+        }
+        
+        
         
         favoriteView.tableViewFavorites.reloadData()
     }

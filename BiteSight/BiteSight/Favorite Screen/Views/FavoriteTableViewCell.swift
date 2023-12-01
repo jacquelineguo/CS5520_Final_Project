@@ -11,7 +11,8 @@ class FavoriteTableViewCell: UITableViewCell {
     var wrapperCellView: UIView!
     var imagePhoto: UIImageView!
     var labelName: UILabel!
-    var labelDescription: UILabel!
+    var labelPrice: UILabel!
+    var labelCategory: UILabel!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -19,7 +20,8 @@ class FavoriteTableViewCell: UITableViewCell {
         setupWrapperCellView()
         setupImagePhoto()
         setupLabelName()
-        setupLabelDescription()
+        setupLabelPrice()
+        setupLabelCategory()
         
         initConstraints()
     }
@@ -58,16 +60,25 @@ class FavoriteTableViewCell: UITableViewCell {
         wrapperCellView.addSubview(labelName)
     }
     
-    func setupLabelDescription() {
-        labelDescription = UILabel()
-        labelDescription.font = UIFont.systemFont(ofSize: 16)
-        labelDescription.numberOfLines = 2
+    func setupLabelPrice() {
+        labelPrice = UILabel()
+        labelPrice.font = UIFont.systemFont(ofSize: 16)
+        labelPrice.sizeToFit()
+        
+        labelPrice.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(labelPrice)
+    }
+    
+    func setupLabelCategory() {
+        labelCategory = UILabel()
+        labelCategory.font = UIFont.systemFont(ofSize: 16)
+        labelCategory.numberOfLines = 2
 //        labelDescription.lineBreakMode = .byWordWrapping
 //        labelDescription.sizeToFit()
-        labelDescription.lineBreakMode = .byTruncatingTail
+        labelCategory.lineBreakMode = .byTruncatingTail
         
-        labelDescription.translatesAutoresizingMaskIntoConstraints = false
-        wrapperCellView.addSubview(labelDescription)
+        labelCategory.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(labelCategory)
     }
     
     func initConstraints() {
@@ -86,9 +97,12 @@ class FavoriteTableViewCell: UITableViewCell {
             labelName.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
             labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 22),
             
-            labelDescription.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
-            labelDescription.bottomAnchor.constraint(equalTo: wrapperCellView.bottomAnchor, constant: -22),
-            labelDescription.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor, constant: -150),
+            labelPrice.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
+            labelPrice.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 11),
+            
+            labelCategory.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
+            labelCategory.topAnchor.constraint(equalTo: labelPrice.bottomAnchor, constant: 11),
+            labelCategory.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor, constant: -150),
             
 //            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 12),
 //            labelName.leadingAnchor.constraint(equalTo: imageProfile.trailingAnchor, constant: 12),

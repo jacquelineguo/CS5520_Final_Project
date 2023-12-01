@@ -14,11 +14,11 @@
 		50A926F12B141E9D00A017DB /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926F02B141E9D00A017DB /* DetailsView.swift */; };
 		50A926F52B141EBD00A017DB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926F42B141EBD00A017DB /* DetailsViewController.swift */; };
 		50A926F72B142F7A00A017DB /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926F62B142F7A00A017DB /* BusinessSearch.swift */; };
+		50A926F92B194F7600A017DB /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926F82B194F7600A017DB /* FavoriteViewController.swift */; };
 		940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */; };
 		940BB4152B0E65C600D5D2D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4142B0E65C600D5D2D2 /* HomeView.swift */; };
 		940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4172B0E690900D5D2D2 /* ExploreView.swift */; };
 		940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4192B0E691700D5D2D2 /* ExploreViewController.swift */; };
-		940BB41D2B0E693100D5D2D2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */; };
 		940BB41F2B0E694300D5D2D2 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */; };
 		940BB4222B0ECDB500D5D2D2 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BB4212B0ECDB500D5D2D2 /* LocationFetcher.swift */; };
 		94DF215C2B16DA5B00BD67DE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DF215B2B16DA5B00BD67DE /* DataService.swift */; };
@@ -77,11 +77,11 @@
 		50A926F02B141E9D00A017DB /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		50A926F42B141EBD00A017DB /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		50A926F62B142F7A00A017DB /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
+		50A926F82B194F7600A017DB /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		940BB4122B0E65B400D5D2D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		940BB4142B0E65C600D5D2D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		940BB4172B0E690900D5D2D2 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		940BB4192B0E691700D5D2D2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		940BB41E2B0E694300D5D2D2 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		940BB4212B0ECDB500D5D2D2 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		94DF215A2B16C0DC00BD67DE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		940BB4202B0E694900D5D2D2 /* Favorite Screen */ = {
 			isa = PBXGroup;
 			children = (
-				940BB41C2B0E693100D5D2D2 /* FavoriteViewController.swift */,
+				50A926F82B194F7600A017DB /* FavoriteViewController.swift */,
 				50A926EE2B1400ED00A017DB /* FavoriteTableViewManager.swift */,
 				50A926E92B13F54700A017DB /* Views */,
 			);
@@ -492,7 +492,6 @@
 				BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */,
 				BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */,
 				94DF215E2B17DD1A00BD67DE /* BusinessCardView.swift in Sources */,
-				940BB41D2B0E693100D5D2D2 /* FavoriteViewController.swift in Sources */,
 				940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */,
 				BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */,
 				94DF215C2B16DA5B00BD67DE /* DataService.swift in Sources */,
@@ -503,6 +502,7 @@
 				BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */,
 				BD0AE0C52B0C1D4C00BD63B8 /* WelcomeView.swift in Sources */,
 				50A926ED2B13FC3A00A017DB /* Configs.swift in Sources */,
+				50A926F92B194F7600A017DB /* FavoriteViewController.swift in Sources */,
 				BD0AE06B2B0C18F800BD63B8 /* AppDelegate.swift in Sources */,
 				50A926EF2B1400ED00A017DB /* FavoriteTableViewManager.swift in Sources */,
 				BD0AE0D12B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift in Sources */,
