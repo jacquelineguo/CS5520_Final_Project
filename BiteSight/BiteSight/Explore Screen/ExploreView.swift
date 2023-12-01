@@ -11,8 +11,8 @@ import Koloda
 class ExploreView: UIView {
 
     var kolodaView: KolodaView!
-    var dislikeImage: UIImageView!
-    var likeImage: UIImageView!
+    var dislikeButton: UIButton!
+    var likeButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,18 +21,17 @@ class ExploreView: UIView {
         kolodaView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(kolodaView)
         
-        dislikeImage = UIImageView()
-        dislikeImage.image = UIImage(named: "dislike")
-        dislikeImage.layer.cornerRadius = 50
-//        dislikeImage.clipsToBounds = true
-        dislikeImage.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(dislikeImage)
+        dislikeButton = UIButton()
+        dislikeButton.setImage(UIImage(named: "dislike"), for: .normal)
+        dislikeButton.layer.cornerRadius = 30
+        dislikeButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(dislikeButton)
         
-        likeImage = UIImageView()
-        likeImage.image = UIImage(named: "like")
-        likeImage.layer.cornerRadius = 30
-        likeImage.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(likeImage)
+        likeButton = UIButton()
+        likeButton.setImage(UIImage(named: "like"), for: .normal)
+        likeButton.layer.cornerRadius = 30
+        likeButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(likeButton)
         
         NSLayoutConstraint.activate([
             kolodaView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: -50),
@@ -40,15 +39,15 @@ class ExploreView: UIView {
             kolodaView.widthAnchor.constraint(equalToConstant: 360),  // Assuming a fixed width
             kolodaView.heightAnchor.constraint(equalToConstant: 530),  // Assuming a fixed height
             
-            dislikeImage.topAnchor.constraint(equalTo: kolodaView.bottomAnchor, constant: 60),
-            dislikeImage.leadingAnchor.constraint(equalTo: kolodaView.leadingAnchor, constant: 15),
-            dislikeImage.widthAnchor.constraint(equalToConstant: 60),
-            dislikeImage.heightAnchor.constraint(equalToConstant: 60),
+            dislikeButton.topAnchor.constraint(equalTo: kolodaView.bottomAnchor, constant: 60),
+            dislikeButton.leadingAnchor.constraint(equalTo: kolodaView.leadingAnchor, constant: 15),
+            dislikeButton.widthAnchor.constraint(equalToConstant: 60),
+            dislikeButton.heightAnchor.constraint(equalToConstant: 60),
             
-            likeImage.topAnchor.constraint(equalTo: kolodaView.bottomAnchor, constant: 60),
-            likeImage.trailingAnchor.constraint(equalTo: kolodaView.trailingAnchor, constant: -15),
-            likeImage.widthAnchor.constraint(equalToConstant: 60),
-            likeImage.heightAnchor.constraint(equalToConstant: 60),
+            likeButton.topAnchor.constraint(equalTo: kolodaView.bottomAnchor, constant: 60),
+            likeButton.trailingAnchor.constraint(equalTo: kolodaView.trailingAnchor, constant: -15),
+            likeButton.widthAnchor.constraint(equalToConstant: 60),
+            likeButton.heightAnchor.constraint(equalToConstant: 60),
         ])
     }
     

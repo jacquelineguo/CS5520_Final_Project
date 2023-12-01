@@ -19,6 +19,7 @@ class ExploreViewController: UIViewController {
     var businessList = [Business]()
     var businessImages = [UIImage]()
     var businessCards = [BusinessCardView]()
+    var isButtonInitiatedSwipe = false
     
     override func loadView() {
         view = exploreView
@@ -29,6 +30,8 @@ class ExploreViewController: UIViewController {
         //        title = "Restaurants Near By"
         exploreView.kolodaView.delegate = self
         exploreView.kolodaView.dataSource = self
+        exploreView.dislikeButton.addTarget(self, action: #selector(dislikeButtonTapped), for: .touchUpInside)
+        exploreView.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         view.backgroundColor = .white
         LocationFetcher.shared.getUserLocation { location in
             print("location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
@@ -49,6 +52,32 @@ class ExploreViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func dislikeButtonTapped() {
+        let currentIndex = exploreView.kolodaView.currentCardIndex
+        isButtonInitiatedSwipe = true
+        handleSwipeForBusiness(atIndex: currentIndex, direction: .left)
+        exploreView.kolodaView.swipe(.left)
+    }
+    
+    @objc func likeButtonTapped() {
+        let currentIndex = exploreView.kolodaView.currentCardIndex
+        isButtonInitiatedSwipe = true
+        handleSwipeForBusiness(atIndex: currentIndex, direction: .right)
+        exploreView.kolodaView.swipe(.right)
+    }
+    
+    func handleSwipeForBusiness(atIndex index: Int, direction: SwipeResultDirection) {
+        if direction == .right {
+            let swipedBusiness = businessList[index]
+            guard let userEmail = Auth.auth().currentUser?.email else {
+                print("No user signed in")
+                return
+            }
+            saveBusinessToFirebase(business: swipedBusiness, userEmail: userEmail)
+        }
+        // Add logic for .left direction if needed
     }
     
     // Asynchronous function to download an image
@@ -185,17 +214,11 @@ extension ExploreViewController: KolodaViewDelegate, KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        if direction == .right {
-            let swipedBusiness = businessList[index]
-            
-            guard let userEmail = Auth.auth().currentUser?.email else {
-                print("No user signed in")
-                return
-            }
-            
-            print("user email: \(userEmail)")
-            saveBusinessToFirebase(business: swipedBusiness, userEmail: userEmail)
+        if !isButtonInitiatedSwipe {
+            handleSwipeForBusiness(atIndex: index, direction: direction)
         }
+        
+        isButtonInitiatedSwipe = false
     }
 }
 
