@@ -11,16 +11,23 @@ import FirebaseAuth
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stores.count
+        return businessList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewHomeID, for: indexPath) as! HomeTableViewCell
-        cell.labelName.text = stores[indexPath.row].name
-        cell.labelAddress.text = stores[indexPath.row].address
-        cell.labelPrice.text = stores[indexPath.row].price
-        cell.labelCategory.text = stores[indexPath.row].category
-        Validation.urlToImage(stores[indexPath.row].imageUrl) { image in
+        cell.labelName.text = businessList[indexPath.row].name
+        if let address = businessList[indexPath.row].location?.address1 {
+            cell.labelAddress.text = address
+        }
+        cell.labelPrice.text = businessList[indexPath.row].price
+        if let catagory = businessList[indexPath.row].categories {
+            if let alias = catagory[0].alias {
+                cell.labelCategory.text = alias
+            }
+        }
+        
+        Validation.urlToImage(businessList[indexPath.row].imageUrl) { image in
             DispatchQueue.main.async {
                 cell.restaurantImageView.image = image
             }
