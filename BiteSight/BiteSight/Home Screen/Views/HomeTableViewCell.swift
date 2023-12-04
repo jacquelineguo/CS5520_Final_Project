@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -9,6 +11,8 @@ class HomeTableViewCell: UITableViewCell {
     var labelCategory: UILabel!
     var labelPrice: UILabel!
     var likeButton: UIButton!
+    var business: Business!
+    let db = Firestore.firestore()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -83,25 +87,8 @@ class HomeTableViewCell: UITableViewCell {
         likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         likeButton.tintColor = .lightGray
         likeButton.translatesAutoresizingMaskIntoConstraints = false
-        likeButton.addTarget(self, action: #selector(didTapLikeButton), for: .touchUpInside)
+//        likeButton.addTarget(self, action: #selector(didTapLikeButton), for: .touchUpInside)
         contentView.addSubview(likeButton)
-    }
-    
-    @objc func didTapLikeButton() {
-        likeButton.isSelected.toggle() // Toggle the selected state of the button
-
-        // Change the button appearance based on whether it's selected
-        let imageName = likeButton.isSelected ? "heart.circle.fill" : "heart"
-        likeButton.setImage(UIImage(systemName: imageName), for: .normal)
-
-        // Optionally animate the button to give feedback to the user
-        UIView.animate(withDuration: 0.2, animations: {
-            self.likeButton.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.2) {
-                self.likeButton.transform = CGAffineTransform.identity
-            }
-        })
     }
     
     private func initConstraints() {
