@@ -22,4 +22,17 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         completion?(location)
         locationManager.stopUpdatingLocation()
     }
+    
+    func getCity(from location: CLLocation, completion: @escaping (String?) -> Void) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                print("Geocoding error: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            let city = placemarks?.first?.locality
+            completion(city)
+        }
+    }
+
 }

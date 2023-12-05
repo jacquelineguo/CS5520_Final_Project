@@ -64,15 +64,17 @@ struct DataService {
         }
     }
     
-    func getRandomRestaurants(completion: @escaping (Result<[Business], Error>) -> Void) {
+    func getCityRestaurants(city: String, completion: @escaping (Result<[Business], Error>) -> Void) {
         guard apiKey != nil else {
             return
         }
         
         let endpoint = Configs.searchRestaurantBaseURL
         let parameters: [String: Any] = [
+            "location": city,
             "is_closed": false,
-            "limit": 40
+            "sort_by": "rating",
+            "limit": 20
         ]
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(apiKey!)",

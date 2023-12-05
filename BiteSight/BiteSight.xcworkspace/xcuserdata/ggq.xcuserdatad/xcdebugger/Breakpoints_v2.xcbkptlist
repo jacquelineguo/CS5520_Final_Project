@@ -24,39 +24,70 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "84BE26D0-935E-4C03-8A71-7FD29960DF77"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiteSight/DataService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getRandomRestaurants(completion:)"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "getCityRestaurants(city:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84BE26D0-935E-4C03-8A71-7FD29960DF77 - 49fbe4380ad23c08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getRandomRestaurants(completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "552">
+               </Location>
+               <Location
+                  uuid = "84BE26D0-935E-4C03-8A71-7FD29960DF77 - 49fbe4380ad23c08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getRandomRestaurants(completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "579">
+               </Location>
+               <Location
+                  uuid = "84BE26D0-935E-4C03-8A71-7FD29960DF77 - 3bac92872fcbf7a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getCityRestaurants(city: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "303">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E19E6CA5-0C18-4F9B-9727-77D0CC0ED480"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BiteSight/DataService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "getRandomRestaurants(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "92175F6D-EB4E-42DC-89FF-488AA88C6A81"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiteSight/DataService.swift"
@@ -64,31 +95,47 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "getRandomRestaurants(completion:)"
+            landmarkName = "getCityRestaurants(city:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E19E6CA5-0C18-4F9B-9727-77D0CC0ED480 - 49fbe4380ad23d42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getRandomRestaurants(completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1070">
+               </Location>
+               <Location
+                  uuid = "E19E6CA5-0C18-4F9B-9727-77D0CC0ED480 - 3bac92872fcbf6eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getCityRestaurants(city: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1037">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1D250A76-EA25-4A48-8FF2-7D1F9C47F6C1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BiteSight/DataService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "getRandomRestaurants(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6F5E49A-21C1-4E68-AAF4-719EA7C0A014"
-            shouldBeEnabled = "Yes"
+            uuid = "92175F6D-EB4E-42DC-89FF-488AA88C6A81"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BiteSight/DataService.swift"
@@ -96,40 +143,136 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "getRandomRestaurants(completion:)"
+            landmarkName = "getCityRestaurants(city:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92175F6D-EB4E-42DC-89FF-488AA88C6A81 - 49fbe4380ad23d00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getRandomRestaurants(completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1863">
+               </Location>
+               <Location
+                  uuid = "92175F6D-EB4E-42DC-89FF-488AA88C6A81 - 3bac92872fcbf6a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getCityRestaurants(city: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1070">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81FE507A-99BE-4D08-9FCA-8129E6695CFE"
+            uuid = "1D250A76-EA25-4A48-8FF2-7D1F9C47F6C1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BiteSight/Home Screen/HomeViewController.swift"
+            filePath = "BiteSight/DataService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getCityRestaurants(city:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1D250A76-EA25-4A48-8FF2-7D1F9C47F6C1 - 49fbe4380ad23ec6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getRandomRestaurants(completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2040">
+               </Location>
+               <Location
+                  uuid = "1D250A76-EA25-4A48-8FF2-7D1F9C47F6C1 - 3bac92872fcbf688"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getCityRestaurants(city: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1344">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C479058D-D388-4B40-A535-65B581420070"
+            uuid = "A6F5E49A-21C1-4E68-AAF4-719EA7C0A014"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BiteSight/Home Screen/HomeViewController.swift"
+            filePath = "BiteSight/DataService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "getAllFavorites()"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "getCityRestaurants(city:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A6F5E49A-21C1-4E68-AAF4-719EA7C0A014 - 49fbe4380ad23ec6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getRandomRestaurants(completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2040">
+               </Location>
+               <Location
+                  uuid = "A6F5E49A-21C1-4E68-AAF4-719EA7C0A014 - 3bac92872fcbf56f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in BiteSight.DataService.getCityRestaurants(city: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;BiteSight.Business&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BiteSight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggq/Desktop/CS5520_Final_Project/BiteSight/BiteSight/DataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1863">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -231,38 +374,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "93EE85B7-1AF9-4CC0-A15D-844B433C81D4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BiteSight/Home Screen/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "getAllFavorites()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8E36DFF7-0276-4B1F-85DC-196C04F809E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BiteSight/Home Screen/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getAllFavorites()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0A5C5E1F-BD3E-4E82-9E4B-AF9C00733114"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -289,22 +400,6 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CFC06E56-1FB5-42FD-A660-6B42034729E0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BiteSight/Home Screen/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "getAllFavorites()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
