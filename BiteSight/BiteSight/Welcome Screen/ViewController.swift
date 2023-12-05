@@ -85,14 +85,7 @@ class ViewController: UIViewController {
                     self.showAlert(with: "Login Error", message: "An error occurred during login: \(error!.localizedDescription)")
                 }
             } else {
-//                let alertController = UIAlertController(title: "Success!!", message: "You are now logged in!", preferredStyle: .alert)
-//                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:  {_ in
-//                    self.navigateToLanding()
-//                }))
-//                self.present(alertController, animated: true, completion: nil)
                 Validation.defaults.set(email, forKey: "auth")
-                
-                
                 print("Current user saved: \(Validation.defaults.object(forKey: "auth"))")
                 print(Validation.defaults.object(forKey: "auth"))
                 self.navigateToLanding()

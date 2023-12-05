@@ -66,7 +66,16 @@ class LandingViewController: UITabBarController, UITabBarControllerDelegate {
             selectedImage: UIImage(systemName: "heart.fill")
         )
         tabFavorite.tabBarItem = tabFavoriteBarItem
+        
+        let tabProfile = UINavigationController(rootViewController: ProfileViewController())
+        let tabProfileBarItem = UITabBarItem(
+            title: "Me",
+            image: UIImage(systemName: "person"),
+            selectedImage: UIImage(systemName: "person.circle")
+        )
+        tabProfile.tabBarItem = tabProfileBarItem
+        
         //MARK: setting up this view controller as the Tab Bar Controller...
-        self.viewControllers = [tabHome, tabExplore, tabFavorite]
+        self.viewControllers = [tabHome, tabExplore, tabFavorite, tabProfile]
     }
 }
