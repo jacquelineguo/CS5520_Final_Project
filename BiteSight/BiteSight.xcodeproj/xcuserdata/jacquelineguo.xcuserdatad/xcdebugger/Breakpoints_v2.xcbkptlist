@@ -14,9 +14,9 @@
             filePath = "BiteSight/Welcome Screen/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "navigateToHome()"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "signInToFirebase(email:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

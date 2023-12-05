@@ -69,6 +69,8 @@
 		BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0CE2B0C422700BD63B8 /* RegisterFirebaseManager.swift */; };
 		BD0AE0D12B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0D02B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift */; };
 		BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE0D22B0C521B00BD63B8 /* Validation.swift */; };
+		BD747A062B1F172C007E39DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A052B1F172C007E39DB /* ProfileViewController.swift */; };
+		BD747A082B1F1C1F007E39DB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A072B1F1C1F007E39DB /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		BD0AE0CE2B0C422700BD63B8 /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
 		BD0AE0D02B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProgressIndicatorManager.swift; sourceTree = "<group>"; };
 		BD0AE0D22B0C521B00BD63B8 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		BD747A052B1F172C007E39DB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BD747A072B1F1C1F007E39DB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CE56BBD85272C34EEB73003B /* Pods-BiteSight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteSight.debug.xcconfig"; path = "Target Support Files/Pods-BiteSight/Pods-BiteSight.debug.xcconfig"; sourceTree = "<group>"; };
 		FEF647501D3737246E210ABE /* Pods_BiteSight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiteSight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -338,6 +342,8 @@
 		BD0AE0BD2B0C1CC000BD63B8 /* User Profile Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BD747A052B1F172C007E39DB /* ProfileViewController.swift */,
+				BD747A072B1F1C1F007E39DB /* ProfileView.swift */,
 			);
 			path = "User Profile Screen";
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				94DF215C2B16DA5B00BD67DE /* DataService.swift in Sources */,
 				940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */,
 				940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */,
+				BD747A062B1F172C007E39DB /* ProfileViewController.swift in Sources */,
 				50A926F52B141EBD00A017DB /* DetailsViewController.swift in Sources */,
 				50A926F12B141E9D00A017DB /* DetailsView.swift in Sources */,
 				BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */,
@@ -522,6 +529,7 @@
 				BD0AE0D12B0C424000BD63B8 /* RegisterProgressIndicatorManager.swift in Sources */,
 				BD0AE06D2B0C18F800BD63B8 /* SceneDelegate.swift in Sources */,
 				BD0AE0C12B0C1D0A00BD63B8 /* LandingView.swift in Sources */,
+				BD747A082B1F1C1F007E39DB /* ProfileView.swift in Sources */,
 				BD0AE0BF2B0C1CF500BD63B8 /* LandingViewController.swift in Sources */,
 				BD0AE0C72B0C1DF500BD63B8 /* ProgressSpinnerDelegate.swift in Sources */,
 				940BB41F2B0E694300D5D2D2 /* FavoriteView.swift in Sources */,
