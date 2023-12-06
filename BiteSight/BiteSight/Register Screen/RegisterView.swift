@@ -51,6 +51,11 @@ class RegisterView: UIView {
         selectPhoto = UIButton(type: .system)
         selectPhoto.setImage(UIImage(systemName: "camera.circle"), for: .normal)
         selectPhoto.tintColor = .black
+        selectPhoto.contentMode = .scaleToFill
+        selectPhoto.layer.borderWidth = 1
+        selectPhoto.layer.masksToBounds = false
+        selectPhoto.layer.borderColor = UIColor.white.cgColor
+        selectPhoto.layer.cornerRadius = 120 / 2
         selectPhoto.contentHorizontalAlignment = .fill
         selectPhoto.contentVerticalAlignment = .fill
         selectPhoto.imageView?.contentMode = .scaleAspectFill
@@ -133,8 +138,8 @@ class RegisterView: UIView {
             
             selectPhoto.topAnchor.constraint(equalTo: signupLabel.bottomAnchor, constant: 40),
             selectPhoto.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            selectPhoto.widthAnchor.constraint(equalToConstant: 80),
-            selectPhoto.heightAnchor.constraint(equalToConstant: 80),
+            selectPhoto.widthAnchor.constraint(equalToConstant: 120),
+            selectPhoto.heightAnchor.constraint(equalToConstant: 120),
 
             labelPhoto.topAnchor.constraint(equalTo: selectPhoto.bottomAnchor, constant: -4),
             labelPhoto.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
