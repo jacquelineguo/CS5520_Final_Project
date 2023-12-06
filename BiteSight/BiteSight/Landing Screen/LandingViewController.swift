@@ -13,12 +13,13 @@ class LandingViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Logout", // You can set your desired title
             style: .plain,
             target: self,
             action: #selector(leftBarButtonItemTapped)
         )
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @objc func leftBarButtonItemTapped() {
