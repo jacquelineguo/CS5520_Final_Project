@@ -10,6 +10,8 @@ import UIKit
 class RegisterView: UIView {
     
     var signupLabel: UILabel!
+    var selectPhoto: UIButton!
+    var labelPhoto: UILabel!
     var nameTextField: UITextField!
     var emailTextField: UITextField!
     var passwordTextField: UITextField!
@@ -23,6 +25,8 @@ class RegisterView: UIView {
         backgroundColor = .white
         
         setupSignupLabel()
+        setupbuttonSelectPhoto()
+        setupPhotoLabel()
         setupName()
         setupEmail()
         setupPassword()
@@ -41,6 +45,28 @@ class RegisterView: UIView {
         signupLabel.font = signupLabel.font.withSize(16)
         signupLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(signupLabel)
+    }
+    
+    func setupbuttonSelectPhoto(){
+        selectPhoto = UIButton(type: .system)
+        selectPhoto.setImage(UIImage(systemName: "camera.circle"), for: .normal)
+        selectPhoto.tintColor = .black
+        selectPhoto.contentHorizontalAlignment = .fill
+        selectPhoto.contentVerticalAlignment = .fill
+        selectPhoto.imageView?.contentMode = .scaleAspectFill
+        selectPhoto.showsMenuAsPrimaryAction = true
+        selectPhoto.translatesAutoresizingMaskIntoConstraints = false
+        selectPhoto.clipsToBounds = true
+        self.addSubview(selectPhoto)
+    }
+    
+    func setupPhotoLabel() {
+        labelPhoto = UILabel()
+        labelPhoto.text = "Profile Photo"
+        labelPhoto.textColor = .systemGray
+        labelPhoto.font = labelPhoto.font.withSize(20)
+        labelPhoto.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelPhoto)
     }
     
     func setupName() {
@@ -105,7 +131,15 @@ class RegisterView: UIView {
             signupLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 40),
             signupLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             
-            nameTextField.topAnchor.constraint(equalTo: signupLabel.bottomAnchor, constant: 40),
+            selectPhoto.topAnchor.constraint(equalTo: signupLabel.bottomAnchor, constant: 40),
+            selectPhoto.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            selectPhoto.widthAnchor.constraint(equalToConstant: 80),
+            selectPhoto.heightAnchor.constraint(equalToConstant: 80),
+
+            labelPhoto.topAnchor.constraint(equalTo: selectPhoto.bottomAnchor, constant: -4),
+            labelPhoto.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            nameTextField.topAnchor.constraint(equalTo: labelPhoto.bottomAnchor, constant: 40),
             nameTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 40),
             nameTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             

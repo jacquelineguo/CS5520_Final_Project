@@ -12,7 +12,33 @@ import FirebaseFirestore
 
 extension RegisterViewController{
     
-    func registerNewAccount(){
+    func uploadProfilePhotoToStorage(){
+        var profilePhotoURL:URL?
+            
+        //MARK: Upload the profile photo if there is any...
+        if let image = pickedImage{
+            if let jpegData = image.jpegData(compressionQuality: 80){
+                let storageRef = storage.reference()
+                let imagesRepo = storageRef.child("imagesUsers")
+                let imageRef = imagesRepo.child("\(NSUUID().uuidString).jpg")
+                
+                let uploadTask = imageRef.putData(jpegData, completion: {(metadata, error) in
+                    if error == nil{
+                        imageRef.downloadURL(completion: {(url, error) in
+                            if error == nil{
+                                profilePhotoURL = url
+                                self.registerNewAccount(photoURL: profilePhotoURL)
+                            }
+                        })
+                    }
+                })
+            }
+        }else{
+            registerNewAccount(photoURL: profilePhotoURL)
+        }
+    }
+    
+    func registerNewAccount(photoURL: URL?){
         showActivityIndicator()
         let name = registerView.nameTextField.text
         let email = registerView.emailTextField.text?.lowercased()
@@ -40,11 +66,11 @@ extension RegisterViewController{
             return
         }
         
-        if let name = name, let email = email, let password = password {
-                    Auth.auth().createUser(withEmail: email, password: password, completion: {result, error in
+        if let name = name, let email = email, let password = password, let city = city, let state = state, let zip = zip {
+            Auth.auth().createUser(withEmail: email, password: password, completion: {result, error in
                         if error == nil{
-                            self.setNameOfTheUserInFirebaseAuth(name: name)
-                            self.createUserDocument(withEmail: email.lowercased())
+                            self.setNameAndPhotoOfTheUserInFirebaseAuth(name: name, email: email, photoURL: photoURL)
+                            self.createUserDocument(withEmail: email.lowercased(), name: name, city: city, state: state, zip: zip, photoURL: photoURL)
                         }else{
                             print(error)
                             self.hideActivityIndicator()
@@ -52,10 +78,13 @@ extension RegisterViewController{
                     })
                 }
     }
-
-    func setNameOfTheUserInFirebaseAuth(name: String){
+    
+    func setNameAndPhotoOfTheUserInFirebaseAuth(name: String, email: String, photoURL: URL?){
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = name
+        changeRequest?.photoURL = photoURL
+        
+        print("\(photoURL)")
         changeRequest?.commitChanges(completion: {(error) in
             if error == nil{
                 self.hideActivityIndicator()
@@ -66,12 +95,14 @@ extension RegisterViewController{
         })
     }
     
-    func createUserDocument(withEmail email: String) {
+    func createUserDocument(withEmail email: String, name: String, city: String, state: String, zip: String, photoURL: URL?) {
         // Get a reference to the Firestore database
         let db = Firestore.firestore()
+        
+        let userData: [String: Any] = ["name": name, "email": email, "city": city, "state": state, "zip": zip]
 
         // Create a new document in the 'users' collection with the email as the document ID
-        db.collection("users").document(email).setData([:]) { error in
+        db.collection("users").document(email).setData(userData) { error in
             if let error = error {
                 // Handle any errors
                 print("Error creating user document: \(error)")
