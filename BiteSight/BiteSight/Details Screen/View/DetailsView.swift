@@ -29,6 +29,8 @@ class DetailsView: UIView {
     
     var buttonDislike: UIButton!
     
+    var buttonMap: UIButton!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -41,6 +43,8 @@ class DetailsView: UIView {
         setupLabelPrice()
         setupLabelRating()
         setupButtonDislike()
+        
+        setupButtonMap()
         
         initConstraints()
     }
@@ -154,6 +158,15 @@ class DetailsView: UIView {
         self.addSubview(buttonDislike)
     }
     
+    func setupButtonMap() {
+        buttonMap = UIButton(type: .system)
+        buttonMap.setTitle("Map", for: .normal)
+        buttonMap.setTitleColor(.red, for: .normal)
+        buttonMap.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        buttonMap.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonMap)
+    }
+    
     func initConstraints() {
         let leadingConstant = CGFloat(30)
         let topConstant = CGFloat(20)
@@ -198,6 +211,9 @@ class DetailsView: UIView {
             
             buttonDislike.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonDislike.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -150),
+            
+            buttonMap.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonMap.bottomAnchor.constraint(equalTo: buttonDislike.topAnchor, constant: -50),
             
             
 //            labelLocation.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),

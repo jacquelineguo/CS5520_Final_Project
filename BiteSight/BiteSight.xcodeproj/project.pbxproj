@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15B65496018645616FD0A726 /* Pods_BiteSight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF647501D3737246E210ABE /* Pods_BiteSight.framework */; };
+		508AE9F42B22834F00D57B1D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508AE9F32B22834F00D57B1D /* MapViewController.swift */; };
 		50A926EB2B13F56B00A017DB /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926EA2B13F56B00A017DB /* FavoriteTableViewCell.swift */; };
 		50A926ED2B13FC3A00A017DB /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926EC2B13FC3A00A017DB /* Configs.swift */; };
 		50A926EF2B1400ED00A017DB /* FavoriteTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A926EE2B1400ED00A017DB /* FavoriteTableViewManager.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		03CDDEDA08DDBCEF1CD4CE26 /* Pods-BiteSight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteSight.release.xcconfig"; path = "Target Support Files/Pods-BiteSight/Pods-BiteSight.release.xcconfig"; sourceTree = "<group>"; };
+		508AE9F32B22834F00D57B1D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50A926EA2B13F56B00A017DB /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		50A926EC2B13FC3A00A017DB /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		50A926EE2B1400ED00A017DB /* FavoriteTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewManager.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				BD0AE0782B0C18FA00BD63B8 /* Info.plist */,
 				BD0AE07E2B0C1AA300BD63B8 /* GoogleService-Info.plist */,
 				94DF215A2B16C0DC00BD67DE /* Config.xcconfig */,
+				508AE9F32B22834F00D57B1D /* MapViewController.swift */,
 			);
 			path = BiteSight;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */,
 				940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */,
 				BD747A062B1F172C007E39DB /* ProfileViewController.swift in Sources */,
+				508AE9F42B22834F00D57B1D /* MapViewController.swift in Sources */,
 				50A926F52B141EBD00A017DB /* DetailsViewController.swift in Sources */,
 				50A926F12B141E9D00A017DB /* DetailsView.swift in Sources */,
 				BD0AE0C92B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift in Sources */,
@@ -708,7 +712,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,7 +743,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import MapKit
 
 class DetailsViewController: UIViewController {
     let detailsView = DetailsView()
@@ -48,6 +49,13 @@ class DetailsViewController: UIViewController {
                 detailsView.labelCity.text = zip
             }
         }
+        if let country = receivedRestaurant.country {
+            if let currCity = detailsView.labelCity.text {
+                detailsView.labelCity.text = currCity + ", \(country)"
+            } else {
+                detailsView.labelCity.text = country
+            }
+        }
         if let phone = receivedRestaurant.displayPhone {
             detailsView.labelPhone1.text = phone
         }
@@ -67,6 +75,20 @@ class DetailsViewController: UIViewController {
         }
         
         detailsView.buttonDislike.addTarget(self, action: #selector(onDislikeButtonTapped), for: .touchUpInside)
+        
+        detailsView.buttonMap.addTarget(self, action: #selector(onMapButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func onMapButtonTapped() {
+        let mapController = MapViewController()
+        if let address = receivedRestaurant.address, let city = receivedRestaurant.city, let state = receivedRestaurant.state, let zip = receivedRestaurant.zipCode, let country = receivedRestaurant.country {
+            mapController.receivedAddress = address + ", " + city + ", " + state + " " + zip + ", " + country
+            print("MAP address: \(mapController.receivedAddress)")
+        } else {
+            mapController.receivedAddress = ""
+            print("MAP address: NA")
+        }
+        navigationController?.pushViewController(mapController, animated: true)
     }
     
     @objc func onDislikeButtonTapped() {
