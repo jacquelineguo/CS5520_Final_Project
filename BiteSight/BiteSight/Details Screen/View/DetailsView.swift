@@ -12,6 +12,7 @@ class DetailsView: UIView {
     var imagePhoto: UIImageView!
     
     var labelLocation: UILabel!
+    var buttonMap: UIButton!
     var labelAddress: UILabel!
     var labelCity: UILabel!
     
@@ -28,9 +29,7 @@ class DetailsView: UIView {
     var labelRating1: UILabel!
     
     var buttonDislike: UIButton!
-    
-    var buttonMap: UIButton!
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -38,13 +37,12 @@ class DetailsView: UIView {
         setupLabelName()
         setupImagePhoto()
         setupLabelLocation()
+        setupButtonMap()
         setupLabelPhone()
         setupLabelCategory()
         setupLabelPrice()
         setupLabelRating()
         setupButtonDislike()
-        
-        setupButtonMap()
         
         initConstraints()
     }
@@ -61,11 +59,9 @@ class DetailsView: UIView {
     
     func setupImagePhoto() {
         imagePhoto = UIImageView()
-//        imagePhoto.image = UIImage(systemName: "person.fill")
         imagePhoto.tintColor = .black
         imagePhoto.contentMode = .scaleAspectFit
         imagePhoto.clipsToBounds = true
-//        imagePhoto.layer.cornerRadius = 10
         imagePhoto.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(imagePhoto)
     }
@@ -80,9 +76,6 @@ class DetailsView: UIView {
         labelAddress = UILabel()
         labelAddress.text = ""
         labelAddress.font = UIFont.systemFont(ofSize: 16)
-//        labelAddress.numberOfLines = 0
-//        labelAddress.lineBreakMode = .byWordWrapping
-//        labelLocation1.sizeToFit()
         labelAddress.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelAddress)
         
@@ -91,6 +84,17 @@ class DetailsView: UIView {
         labelCity.font = UIFont.systemFont(ofSize: 16)
         labelCity.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelCity)
+    }
+    
+    func setupButtonMap() {
+        buttonMap = UIButton(type: .system)
+        buttonMap.setTitle("", for: .normal)
+        buttonMap.setImage(UIImage(systemName: "mappin.and.ellipse"), for: .normal)
+        buttonMap.contentHorizontalAlignment = .fill
+        buttonMap.contentVerticalAlignment = .fill
+        buttonMap.imageView?.contentMode = .scaleAspectFit
+        buttonMap.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonMap)
     }
     
     func setupLabelPhone() {
@@ -158,15 +162,6 @@ class DetailsView: UIView {
         self.addSubview(buttonDislike)
     }
     
-    func setupButtonMap() {
-        buttonMap = UIButton(type: .system)
-        buttonMap.setTitle("Map", for: .normal)
-        buttonMap.setTitleColor(.red, for: .normal)
-        buttonMap.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        buttonMap.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(buttonMap)
-    }
-    
     func initConstraints() {
         let leadingConstant = CGFloat(30)
         let topConstant = CGFloat(20)
@@ -178,11 +173,13 @@ class DetailsView: UIView {
             imagePhoto.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
             imagePhoto.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: topConstant),
             imagePhoto.heightAnchor.constraint(equalToConstant: 150),
-//            imagePhoto.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor),
             imagePhoto.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             labelLocation.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
             labelLocation.topAnchor.constraint(equalTo: imagePhoto.bottomAnchor, constant: topConstant),
+            buttonMap.leadingAnchor.constraint(equalTo: labelLocation.trailingAnchor, constant: indentConstant),
+            buttonMap.topAnchor.constraint(equalTo: imagePhoto.bottomAnchor, constant: topConstant),
+            buttonMap.heightAnchor.constraint(equalToConstant: 20),
             
             labelAddress.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
             labelAddress.topAnchor.constraint(equalTo: labelLocation.bottomAnchor, constant: 5),
@@ -211,35 +208,6 @@ class DetailsView: UIView {
             
             buttonDislike.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonDislike.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -150),
-            
-            buttonMap.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonMap.bottomAnchor.constraint(equalTo: buttonDislike.topAnchor, constant: -50),
-            
-            
-//            labelLocation.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
-//            labelLocation.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 20),
-//
-//            labelAddress.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
-//            labelAddress.topAnchor.constraint(equalTo: labelLocation.bottomAnchor, constant: 10),
-//
-//            labelZip.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
-//            labelZip.topAnchor.constraint(equalTo: labelAddress.bottomAnchor, constant: 3),
-//
-//            labelLikes.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
-//            labelLikes.topAnchor.constraint(equalTo: labelZip.bottomAnchor, constant: 20),
-//
-//            imagePhoto.topAnchor.constraint(equalTo: self.topAnchor, constant: topConstant),
-//            imagePhoto.heightAnchor.constraint(equalToConstant: 180),
-//            imagePhoto.widthAnchor.constraint(equalToConstant: 180),
-//            imagePhoto.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-//
-//            labelDescription.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
-//            labelDescription.topAnchor.constraint(equalTo: imagePhoto.bottomAnchor, constant: 50),
-//
-//            labelDetails.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: leadingConstant),
-//            labelDetails.topAnchor.constraint(equalTo: labelDescription.bottomAnchor, constant: 10),
-//            labelDetails.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100)
-            
         ])
     }
 
@@ -247,12 +215,4 @@ class DetailsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

@@ -75,20 +75,7 @@ class DetailsViewController: UIViewController {
         }
         
         detailsView.buttonDislike.addTarget(self, action: #selector(onDislikeButtonTapped), for: .touchUpInside)
-        
         detailsView.buttonMap.addTarget(self, action: #selector(onMapButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc func onMapButtonTapped() {
-        let mapController = MapViewController()
-        if let address = receivedRestaurant.address, let city = receivedRestaurant.city, let state = receivedRestaurant.state, let zip = receivedRestaurant.zipCode, let country = receivedRestaurant.country {
-            mapController.receivedAddress = address + ", " + city + ", " + state + " " + zip + ", " + country
-            print("MAP address: \(mapController.receivedAddress)")
-        } else {
-            mapController.receivedAddress = ""
-            print("MAP address: NA")
-        }
-        navigationController?.pushViewController(mapController, animated: true)
     }
     
     @objc func onDislikeButtonTapped() {
@@ -105,13 +92,21 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    @objc func onMapButtonTapped() {
+        let mapController = MapViewController()
+        if let address = receivedRestaurant.address, let city = receivedRestaurant.city, let state = receivedRestaurant.state, let zip = receivedRestaurant.zipCode, let country = receivedRestaurant.country {
+            mapController.receivedAddress = address + ", " + city + ", " + state + " " + zip + ", " + country
+        } else {
+            mapController.receivedAddress = ""
+        }
+        navigationController?.pushViewController(mapController, animated: true)
+    }
+    
     func likeRestaurant(action: UIAlertAction) {
         guard let userEmail = Auth.auth().currentUser?.email else {
             print("No user signed in")
             return
         }
-        // Reference to Firestore
-        print("saving business to firebase ...")
         
         // Convert your business object to a dictionary
         let businessData: [String: Any?] = [
@@ -134,7 +129,6 @@ class DetailsViewController: UIViewController {
             "distance": receivedRestaurant.distance
         ]
         
-        print("business data: \(businessData)")
         // Add the business data to the user's business collection
         self.database.collection("users").document(userEmail).collection("businesses").addDocument(data: businessData) { error in
             if let error = error {
@@ -148,16 +142,6 @@ class DetailsViewController: UIViewController {
     
     func dislikeRestaurant(action: UIAlertAction) {
         if let currUser = Validation.defaults.object(forKey: "auth") as! String? {
-//            let documentRef = database.collection("users").document(currUser).collection("businesses").document(receivedRestaurant.docId!)
-//            documentRef.delete { error in
-//                if let error = error {
-//                    print("Error deleting document: \(error)")
-//                } else {
-//                    print("Document successfully deleted.")
-//                    self.navigationController?.popViewController(animated: true)
-//                }
-//            }
-            
             let query = database.collection("users").document(currUser).collection("businesses").whereField("name", isEqualTo: receivedRestaurant.name)
 
             query.getDocuments { (querySnapshot, err) in
@@ -165,7 +149,6 @@ class DetailsViewController: UIViewController {
                     print("Error getting documents: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
-                        // Delete the document
                         document.reference.delete { error in
                             if let error = error {
                                 print("Error deleting document: \(error)")
@@ -179,16 +162,4 @@ class DetailsViewController: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
