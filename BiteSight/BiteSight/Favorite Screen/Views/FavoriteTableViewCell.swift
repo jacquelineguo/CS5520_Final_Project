@@ -40,7 +40,6 @@ class FavoriteTableViewCell: UITableViewCell {
     
     func setupImagePhoto() {
         imagePhoto = UIImageView()
-//        imagePhoto.image = UIImage(systemName: "person.fill")
         imagePhoto.tintColor = .black
         imagePhoto.contentMode = .scaleToFill
         imagePhoto.clipsToBounds = true
@@ -52,8 +51,6 @@ class FavoriteTableViewCell: UITableViewCell {
     func setupLabelName() {
         labelName = UILabel()
         labelName.font = UIFont.boldSystemFont(ofSize: 16)
-//        labelName.numberOfLines = 0
-//        labelName.lineBreakMode = .byWordWrapping
         labelName.sizeToFit()
         
         labelName.translatesAutoresizingMaskIntoConstraints = false
@@ -73,8 +70,6 @@ class FavoriteTableViewCell: UITableViewCell {
         labelCategory = UILabel()
         labelCategory.font = UIFont.systemFont(ofSize: 16)
         labelCategory.numberOfLines = 2
-//        labelDescription.lineBreakMode = .byWordWrapping
-//        labelDescription.sizeToFit()
         labelCategory.lineBreakMode = .byTruncatingTail
         
         labelCategory.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +84,7 @@ class FavoriteTableViewCell: UITableViewCell {
             wrapperCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3),
             wrapperCellView.heightAnchor.constraint(equalToConstant: 120),
             
-            imagePhoto.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor),
+            imagePhoto.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 10),
             imagePhoto.heightAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -20),
             imagePhoto.widthAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -20),
             imagePhoto.centerYAnchor.constraint(equalTo: wrapperCellView.centerYAnchor),
@@ -103,25 +98,6 @@ class FavoriteTableViewCell: UITableViewCell {
             labelCategory.leadingAnchor.constraint(equalTo: imagePhoto.trailingAnchor, constant: 20),
             labelCategory.topAnchor.constraint(equalTo: labelPrice.bottomAnchor, constant: 11),
             labelCategory.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor, constant: -150),
-            
-//            labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 12),
-//            labelName.leadingAnchor.constraint(equalTo: imageProfile.trailingAnchor, constant: 12),
-//            labelName.heightAnchor.constraint(equalToConstant: 30),
-//
-//            labelEmail.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 4),
-//            labelEmail.leadingAnchor.constraint(equalTo: imageProfile.trailingAnchor, constant: 12),
-//            labelEmail.heightAnchor.constraint(equalToConstant: 20),
-//
-//            labelPhone.topAnchor.constraint(equalTo: labelEmail.bottomAnchor, constant: 4),
-//            labelPhone.leadingAnchor.constraint(equalTo: imageProfile.trailingAnchor, constant: 12),
-//            labelPhone.heightAnchor.constraint(equalToConstant: 20),
-//
-//            imageProfile.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 8),
-//            imageProfile.centerYAnchor.constraint(equalTo: wrapperCellView.centerYAnchor),
-//            imageProfile.heightAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -30),
-//            imageProfile.widthAnchor.constraint(equalTo: wrapperCellView.heightAnchor, constant: -30),
-            
-            
         ])
     }
     
@@ -132,12 +108,10 @@ class FavoriteTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 
 }
