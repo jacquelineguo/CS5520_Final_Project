@@ -11,7 +11,6 @@ class BusinessCardView: UIView {
     
     var businessImage: UIImageView!
     var businessName: UILabel!
-//    var businessCategory: UILabel!
     var businessCategory: UIButton!
     var separator: UIView!
     

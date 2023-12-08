@@ -154,7 +154,7 @@ class ProfileView: UIView {
             emailIcon.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 14),
             emailIcon.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 40),
             
-            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 14),
             emailLabel.leadingAnchor.constraint(equalTo: emailIcon.trailingAnchor, constant: 14),
 
             cityIcon.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 14),

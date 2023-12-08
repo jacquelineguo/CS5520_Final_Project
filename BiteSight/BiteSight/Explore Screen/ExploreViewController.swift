@@ -28,7 +28,6 @@ class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        title = "Restaurants Near By"
         exploreView.kolodaView.delegate = self
         exploreView.kolodaView.dataSource = self
         exploreView.dislikeButton.addTarget(self, action: #selector(dislikeButtonTapped), for: .touchUpInside)

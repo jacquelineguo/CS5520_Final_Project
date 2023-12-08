@@ -74,6 +74,9 @@
 		BD747A082B1F1C1F007E39DB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A072B1F1C1F007E39DB /* ProfileView.swift */; };
 		BD747A0A2B2074E8007E39DB /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A092B2074E8007E39DB /* PhotoManager.swift */; };
 		BD747A0C2B207FAD007E39DB /* ImageViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A0B2B207FAD007E39DB /* ImageViewUtils.swift */; };
+		BD747A0F2B23AD4E007E39DB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A0E2B23AD4E007E39DB /* EditProfileView.swift */; };
+		BD747A112B23AD65007E39DB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A102B23AD65007E39DB /* EditProfileViewController.swift */; };
+		BD747A132B23C3EA007E39DB /* EditProfilePhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747A122B23C3EA007E39DB /* EditProfilePhotoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +123,9 @@
 		BD747A072B1F1C1F007E39DB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BD747A092B2074E8007E39DB /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		BD747A0B2B207FAD007E39DB /* ImageViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewUtils.swift; sourceTree = "<group>"; };
+		BD747A0E2B23AD4E007E39DB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		BD747A102B23AD65007E39DB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		BD747A122B23C3EA007E39DB /* EditProfilePhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePhotoManager.swift; sourceTree = "<group>"; };
 		CE56BBD85272C34EEB73003B /* Pods-BiteSight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiteSight.debug.xcconfig"; path = "Target Support Files/Pods-BiteSight/Pods-BiteSight.debug.xcconfig"; sourceTree = "<group>"; };
 		FEF647501D3737246E210ABE /* Pods_BiteSight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiteSight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -284,10 +290,10 @@
 		BD0AE0692B0C18F800BD63B8 /* BiteSight */ = {
 			isa = PBXGroup;
 			children = (
+				BD747A0D2B23AD30007E39DB /* Edit Profile Screen */,
 				50A926E62B13F40800A017DB /* Data Models */,
 				BD0AE0C32B0C1D2200BD63B8 /* Progress Indicator */,
 				BD0AE0BD2B0C1CC000BD63B8 /* User Profile Screen */,
-				BD0AE0BC2B0C1CAE00BD63B8 /* Restaurant Detail Screen */,
 				940BB4232B0ECDC200D5D2D2 /* Utility */,
 				940BB4202B0E694900D5D2D2 /* Favorite Screen */,
 				50A926F22B141EA600A017DB /* Details Screen */,
@@ -340,13 +346,6 @@
 			path = "Landing Screen";
 			sourceTree = "<group>";
 		};
-		BD0AE0BC2B0C1CAE00BD63B8 /* Restaurant Detail Screen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Restaurant Detail Screen";
-			sourceTree = "<group>";
-		};
 		BD0AE0BD2B0C1CC000BD63B8 /* User Profile Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +363,16 @@
 				BD0AE0C82B0C1E0D00BD63B8 /* ProgressSpinnerViewController.swift */,
 			);
 			path = "Progress Indicator";
+			sourceTree = "<group>";
+		};
+		BD747A0D2B23AD30007E39DB /* Edit Profile Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BD747A0E2B23AD4E007E39DB /* EditProfileView.swift */,
+				BD747A102B23AD65007E39DB /* EditProfileViewController.swift */,
+				BD747A122B23C3EA007E39DB /* EditProfilePhotoManager.swift */,
+			);
+			path = "Edit Profile Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD747A0F2B23AD4E007E39DB /* EditProfileView.swift in Sources */,
 				50A926F72B142F7A00A017DB /* BusinessSearch.swift in Sources */,
 				BD0AE0CB2B0C41E800BD63B8 /* RegisterView.swift in Sources */,
 				BD0AE0CD2B0C420A00BD63B8 /* RegisterViewController.swift in Sources */,
@@ -521,9 +531,11 @@
 				BD0AE06F2B0C18F800BD63B8 /* ViewController.swift in Sources */,
 				BD0AE0CF2B0C422700BD63B8 /* RegisterFirebaseManager.swift in Sources */,
 				94DF215E2B17DD1A00BD67DE /* BusinessCardView.swift in Sources */,
+				BD747A112B23AD65007E39DB /* EditProfileViewController.swift in Sources */,
 				940BB4132B0E65B400D5D2D2 /* HomeViewController.swift in Sources */,
 				BD0AE0D32B0C521B00BD63B8 /* Validation.swift in Sources */,
 				94DF215C2B16DA5B00BD67DE /* DataService.swift in Sources */,
+				BD747A132B23C3EA007E39DB /* EditProfilePhotoManager.swift in Sources */,
 				940BB4182B0E690900D5D2D2 /* ExploreView.swift in Sources */,
 				940BB41A2B0E691700D5D2D2 /* ExploreViewController.swift in Sources */,
 				BD747A062B1F172C007E39DB /* ProfileViewController.swift in Sources */,

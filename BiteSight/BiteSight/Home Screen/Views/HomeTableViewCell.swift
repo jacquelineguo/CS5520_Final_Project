@@ -87,7 +87,6 @@ class HomeTableViewCell: UITableViewCell {
         likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         likeButton.tintColor = .lightGray
         likeButton.translatesAutoresizingMaskIntoConstraints = false
-//        likeButton.addTarget(self, action: #selector(didTapLikeButton), for: .touchUpInside)
         contentView.addSubview(likeButton)
     }
     

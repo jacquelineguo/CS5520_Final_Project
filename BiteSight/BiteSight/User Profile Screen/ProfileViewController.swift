@@ -38,9 +38,15 @@ class ProfileViewController: UIViewController {
                 self.profileView.nameLabel.text = "Name: \(user.displayName ?? "Anonymous")"
                 self.profileView.emailLabel.text = "Email: \(user.email ?? "None")"
                 self.listenForUserProfileChanges(uid: user.email!)
-                self.getLocationData()
             }
         }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit Profile", style: .plain, target: self, action: #selector(onEditTapped))
+    }
+    
+    @objc func onEditTapped() {
+        let editProfileScreen = EditProfileViewController()
+        navigationController?.pushViewController(editProfileScreen, animated: true)
     }
     
     deinit {
@@ -49,49 +55,28 @@ class ProfileViewController: UIViewController {
     }
     
     private func listenForUserProfileChanges(uid: String) {
-        userListener = Firestore.firestore().collection("users").document(uid).addSnapshotListener { documentSnapshot, error in
-            // Safely unwrap the error and handle it
+        userListener = Firestore.firestore().collection("users").document(uid).addSnapshotListener { [weak self] documentSnapshot, error in
+            guard let self = self else { return }
+
             if let error = error {
                 print("Error fetching document: \(error)")
                 return
             }
 
-            // Proceed if the document exists and there's no error
             guard let document = documentSnapshot, document.exists else {
                 print("Document does not exist")
                 return
             }
 
-            if let data = document.data(), let updatedName = data["name"] as? String {
-                self.profileView.nameLabel.text = "Name: \(updatedName)"
-            }
-        }
-    }
-    
-    private func getLocationData() {
-        let db = Firestore.firestore()
-        let usersCollection = db.collection("users")
-        usersCollection.document(self.email).getDocument{ (document, error) in
-            if let error = error {
-                print("Error fetching user: \(error.localizedDescription)")
-                return
-            }
+            let data = document.data()
+            self.profileView.nameLabel.text = "Name: \(data?["name"] as? String ?? "Anonymous")"
+            self.profileView.cityLabel.text = "City: \(data?["city"] as? String ?? "None")"
+            self.profileView.stateLabel.text = "State: \(data?["state"] as? String ?? "None")"
+            self.profileView.zipLabel.text = "Zip: \(data?["zip"] as? String ?? "None")"
             
-            if let document = document, document.exists {
-                let city = document.data()?["city"] as? String
-                let state = document.data()?["state"] as? String
-                let zip = document.data()?["zip"] as? String
-                print("yayaya")
-                self.profileView.cityLabel.text = "City: \(city ?? "None")"
-                self.profileView.stateLabel.text = "State: \(state ?? "None")"
-                self.profileView.zipLabel.text = "Zip: \(zip ?? "None")"
-                if let url = self.currentUser?.photoURL{
-                    self.profileView.imageIcon.loadRemoteImage(from: url)
-                }
-            } else {
-                print("Document does not exist")
-            }
+            if let photoURLString = data?["photoURL"] as? String, let photoURL = URL(string: photoURLString) {
+               self.profileView.imageIcon.loadRemoteImage(from: photoURL)
+           }
         }
     }
-
 }
