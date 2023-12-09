@@ -39,7 +39,7 @@ class RegisterView: UIView {
     
     func setupSignupLabel() {
         signupLabel = UILabel()
-        signupLabel.text = "Tell us a little bit about yourself to create your account"
+        signupLabel.text = "Tell us a little bit about yourself to create your account (Profile photo is optional)"
         signupLabel.lineBreakMode = .byWordWrapping
         signupLabel.numberOfLines = 0
         signupLabel.font = signupLabel.font.withSize(16)

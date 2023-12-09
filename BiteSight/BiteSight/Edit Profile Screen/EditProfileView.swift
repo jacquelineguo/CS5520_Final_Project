@@ -35,7 +35,7 @@ class EditProfileView: UIView {
     
     func setupSignupLabel() {
         signupLabel = UILabel()
-        signupLabel.text = "Eidt the account information below, only provide the value in the field you want to make the change"
+        signupLabel.text = "Edit the account information below. Only provide the value in the field where you want to make changes."
         signupLabel.lineBreakMode = .byWordWrapping
         signupLabel.numberOfLines = 0
         signupLabel.font = signupLabel.font.withSize(16)
