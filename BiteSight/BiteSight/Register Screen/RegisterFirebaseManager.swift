@@ -67,16 +67,28 @@ extension RegisterViewController{
         }
         
         if let name = name, let email = email, let password = password, let city = city, let state = state, let zip = zip {
-            Auth.auth().createUser(withEmail: email, password: password, completion: {result, error in
-                        if error == nil{
-                            self.setNameAndPhotoOfTheUserInFirebaseAuth(name: name, email: email, photoURL: photoURL)
-                            self.createUserDocument(withEmail: email.lowercased(), name: name, city: city, state: state, zip: zip, photoURL: photoURL)
-                        }else{
-                            print(error)
-                            self.hideActivityIndicator()
+                Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] result, error in
+                    guard let self = self else { return }
+
+                    if let error = error as NSError? {
+                        self.hideActivityIndicator()
+
+                        if error.code == AuthErrorCode.emailAlreadyInUse.rawValue {
+                            print("Email already in use")
+                            self.showAlert(with: "Error", message: "The email address is already in use by another account.")
+                        } else {
+                            // Handle other errors
+                            print("Other error: \(error.localizedDescription)")
+                            self.showAlert(with: "Error", message: error.localizedDescription)
                         }
-                    })
-                }
+                        return
+                    }
+
+                    // If no error, proceed with user registration
+                    self.setNameAndPhotoOfTheUserInFirebaseAuth(name: name, email: email, photoURL: photoURL)
+                    self.createUserDocument(withEmail: email.lowercased(), name: name, city: city, state: state, zip: zip, photoURL: photoURL)
+                })
+            }
     }
     
     func setNameAndPhotoOfTheUserInFirebaseAuth(name: String, email: String, photoURL: URL?){
